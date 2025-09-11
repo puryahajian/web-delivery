@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: sans;
+  src: url("../src/assets/fonts/IRANSans.ttf");
+}
+@font-face {
+  font-family: sahelBold;
+  src: url("../src/assets/fonts/Sans\ Bold.ttf");
+}
+
+body{
+  margin: 0;
+
+}
+
+.loader {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border-bottom: 4px solid #FF3D00;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+.bgBtnFooter{
+  background: url('../src/assets/image/Screenshot\ 2025-08-11\ at\ 12.15.13.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.footerShadow{
+  box-shadow: -10px -10px 0 9px #454545;
+}
+
+tbody tr td {
+  border: 1px solid #e0e0e0 !important;
+  border-left: none !important;
+  border-right: none !important;
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+.ns {
+  border-right: 1px solid #e0e0e0 !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+}
+.ne {
+  border-left: 1px solid #e0e0e0 !important;
+  border-top-left-radius: 8px !important;
+  border-bottom-left-radius: 8px !important;
+}
+
+/* otp */
+.otp-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  /* background-color: #f9f9f9; */
+  border-radius: 10px;
+  direction: ltr;
+  gap: 25px;
+}
+.otp-input {
+  width: 60px !important;
+  height: 55px !important;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 18px;
+}
+@media screen and (max-width: 990px) {
+  .otp-input {
+    width: 43px !important;
+    height: 43px !important;
+  }
+}
+@media screen and (max-width: 480px) {
+  .otp-input {
+    width: 56px !important;
+    height: 53px !important;
+  }
+}
+
+.scroll-slider::-webkit-scrollbar{
+  display: none !important;
+}
+
+/*  */
+
+.btn-megaMenu{
+  height: 50px !important;
+}
+.content-mega-menu{
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
