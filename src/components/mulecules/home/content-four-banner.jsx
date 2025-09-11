@@ -16,7 +16,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${lastFourBanners?.[0]?.image}`}
+                image={`https://api.sonatikaran.ir${lastFourBanners?.[0]?.image}`}
                 boxFit="cover"
             />
             <AvatarButton
@@ -27,7 +27,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${lastFourBanners?.[1]?.image}`}
+                image={`https://api.sonatikaran.ir${lastFourBanners?.[1]?.image}`}
                 boxFit="cover"
             />
                 <AvatarButton
@@ -38,7 +38,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${lastFourBanners?.[2]?.image}`}
+                image={`https://api.sonatikaran.ir${lastFourBanners?.[2]?.image}`}
                 boxFit="cover"
             /> <AvatarButton
                 // onTap={handleClick}
@@ -48,7 +48,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${lastFourBanners?.[3]?.image}`}
+                image={`https://api.sonatikaran.ir${lastFourBanners?.[3]?.image}`}
                 boxFit="cover"
             />
         </div>

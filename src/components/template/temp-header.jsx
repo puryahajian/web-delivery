@@ -22,6 +22,7 @@ import DropDownMenu from '../mulecules/drop-down-menu'
 
 function TempHeader({ setModalLogOut }) {
     const {data} = useGetOption();
+    // console.log(data)
     const {data: dataProfile} = useGetProfile()
     // console.log(data)
     const { cart } = useCart();
