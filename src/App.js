@@ -13,10 +13,8 @@ import Search from './pages/search';
 import ScrollToTop from './lib/scroll-to-top';
 import ModalGeneral from './components/mulecules/modal-general';
 import Cookies from "js-cookie";
-import TempMenuBottomMobile from './components/template/temp-menu-bottom-mobile';
 import ActiveOrderMobile from './pages/active-order-mobile';
-import Transactios from './pages/transaction';
-import ContentUsMobile from './pages/content-us-mobile';
+import TempMenuBottomMobile from './components/template/temp-menu-bottom-mobile';
 
 
 function App() {
@@ -48,17 +46,10 @@ function App() {
     };
   }, [location.pathname]);
 
-  // Global logout modal opener
-  useEffect(() => {
-    const open = () => setModalLogOut(true);
-    document.addEventListener('openLogoutModal', open);
-    return () => document.removeEventListener('openLogoutModal', open);
-  }, []);
-
   const handleSuccess = () => {
     Cookies.remove('access');
     Cookies.remove('refresh');
-    // navigate('/login')
+    navigate('/login')
     setModalLogOut(false);
   }
   return (
@@ -71,11 +62,9 @@ function App() {
           <Route path='/cart' element={<Cart />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/about-us' element={<AboutUs />} />
+          <Route path='/active-order' element={<ActiveOrderMobile />} />
           <Route path='/search' element={<Search />} />
           <Route path='/login' element={<Login />} />
-          <Route path='/active-order' element={<ActiveOrderMobile />} />
-          <Route path='/transaction' element={<Transactios />} />
-          <Route path='/content-us' element={<ContentUsMobile />} />
         </Routes>
         <TempMenuBottomMobile />
 

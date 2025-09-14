@@ -7,19 +7,7 @@ import {
 import Button from "../atoms/button";
 
 
-function ModalGeneral({ 
-    Title, 
-    children, 
-    classBtns, 
-    isOpen, 
-    close, 
-    onSuccess, 
-    textAccept, 
-    classModal,
-    classAccess,
-    classCanceled 
-    }) {
-
+function ModalGeneral({ Title, children, classBtns, isOpen, close, onSuccess, textAccept }) {
     return (
         <Dialog
         open={isOpen}
@@ -37,7 +25,7 @@ function ModalGeneral({
                 <div className="flex min-h-full items-center justify-center p-4">
                     <DialogPanel
                         transition
-                        className={`w-full max-w-[400px] rounded-xl bg-white p-6  duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0 ${classModal}`}
+                        className="w-full max-w-[400px] rounded-xl bg-white p-6  duration-300 ease-out data-closed:transform-[scale(95%)] data-closed:opacity-0"
                     >
                         <DialogTitle
                             as="h3"
@@ -50,16 +38,16 @@ function ModalGeneral({
 
                         <div className={`mt-4 ${classBtns}`}>
                             <Button
-                                className={`items-center gap-2 rounded-lg px-3 py-2 ${classAccess}`}
+                                className="items-center gap-2 rounded-lg px-3 py-2 "
                                 onClick={onSuccess}
                             >
                                 {textAccept}
                             </Button>
                             <Button
-                                className={`items-center gap-2 rounded-lg px-3 py-2 font-sans bg-transparent border !border-BgCustom font-semibold !text-BgCustom ${classCanceled}`}
+                                className="items-center gap-2 rounded-lg px-3 py-2 font-sans bg-transparent border !border-BgBlue font-semibold !text-BgBlue"
                                 onClick={close}
                             >
-                                بازگشت
+                                إغلاق
                             </Button>
                         </div>
                     </DialogPanel>

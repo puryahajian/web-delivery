@@ -29,7 +29,6 @@ const AvatarButton = ({
         <div style={{ textAlign: "center"}} className={className}>
             <div
                 onClick={onTap || (() => {})}
-                role="button"
                 style={{
                     width: width,
                     height: height,

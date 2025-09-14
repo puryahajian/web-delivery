@@ -3,12 +3,11 @@ import Text from "../../atoms/text";
 import ModalGeneralBottom from "../modal-general-bottom";
 import Burron from '../../atoms/button'
 import useGetOrders from "../../../hooks/use-get-orders";
-import Rial from "../../../assets/image/Iconly/Iconly/Bold/Frame.png"
 
 function CardActiveOrderMobile ({setModalDetailOrder, setGetData}) {
     const {data} = useGetOrders();
     // const [getData , setGetData] = useState('');
-    // console.log(data)
+    console.log(data)
 
     const stateLabels = {
         0: "در انتظار",

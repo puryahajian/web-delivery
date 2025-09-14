@@ -4,14 +4,14 @@ const OrderDetailsContent = ({ order, styleMedium, styleMediumOff, styleBold }) 
     // معادل فانکشن‌های Dart
     const getStatusText = (state) => {
         switch (state) {
-        case 0: return 'در انتظار تأیید';
-        case 1: return 'در حال پرداخت';
-        case 2: return 'در حال آماده‌سازی';
-        case 3: return 'لغو شده';
-        case 4: return 'ارسال شد';
-        case 5: return 'در انتظار انتخاب پیک';
-        case 8: return 'تحویل شد';
-        default: return 'نامشخص';
+            case 0: return 'در انتظار تایید';
+            case 1: return 'در حال پرداخت';
+            case 2: return 'در حال آماده‌سازی';
+            case 3: return 'لغو شده';
+            case 4: return 'ارسال شد';
+            case 5: return 'در انتظار انتخاب راننده';
+            case 8: return 'تحویل داده شد';
+            default: return 'نامشخص';
         }
     };
 
@@ -30,17 +30,17 @@ const OrderDetailsContent = ({ order, styleMedium, styleMediumOff, styleBold }) 
 
     const getPaymentMethodText = (method) => {
         switch (method) {
-        case 1: return 'آنلاین';
-        case 2: return 'نقدی';
-        default: return 'نامشخص';
+            case 1: return 'آنلاین';
+            case 2: return 'نقدی';
+            default: return 'نامشخص';
         }
     };
 
     const getDeliveryMethodText = (method) => {
         switch (method) {
-        case 1: return 'پیک';
-        case 2: return 'پست';
-        default: return 'نامشخص';
+            case 1: return 'راننده تحویل';
+            case 2: return 'پست';
+            default: return 'نامشخص';
         }
     };
 
@@ -64,8 +64,8 @@ const OrderDetailsContent = ({ order, styleMedium, styleMediumOff, styleBold }) 
     const OrderInfoCard = () => (
         <div style={{ marginBottom: 16 }}>
         <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-            <div style={styleBold}>وضعیت سفارش</div>
-            <div style={{
+        <div style={styleBold}>وضعیت سفارش</div>
+        <div style={{
             backgroundColor: getStatusColor(order.state),
             color: 'white',
             borderRadius: 16,

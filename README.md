@@ -1,243 +1,70 @@
-# فروشگاه آنلاین ایرانی (Iranian Online Shop)
+# Getting Started with Create React App
 
-## 📋 معرفی پروژه
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-این پروژه یک فروشگاه آنلاین کامل است که با استفاده از React.js و Tailwind CSS ساخته شده است. این اپلیکیشن شامل تمام قابلیت‌های مورد نیاز یک فروشگاه آنلاین مدرن می‌باشد.
+## Available Scripts
 
-## ✨ ویژگی‌های کلیدی
+In the project directory, you can run:
 
-- 🛍️ **مدیریت محصولات**: نمایش، جستجو و فیلتر محصولات
-- 🛒 **سبد خرید**: مدیریت کامل سبد خرید با قابلیت افزودن، حذف و تغییر تعداد
-- 👤 **احراز هویت کاربر**: سیستم ورود و ثبت‌نام با OTP
-- 📱 **طراحی ریسپانسیو**: سازگار با تمام دستگاه‌ها
-- 🗺️ **نقشه**: پشتیبانی از نقشه‌های مختلف (Google Maps, Mapbox, Leaflet)
-- 🎨 **رابط کاربری مدرن**: طراحی زیبا با Tailwind CSS
-- 🔍 **جستجوی پیشرفته**: قابلیت جستجو در محصولات
-- 📊 **مدیریت سفارشات**: پیگیری و مدیریت سفارشات کاربران
+### `npm start`
 
-## 🛠️ تکنولوژی‌های استفاده شده
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Frontend
-- **React.js 19.1.1** - کتابخانه اصلی UI
-- **React Router DOM 7.8.0** - مدیریت مسیریابی
-- **Tailwind CSS 3.4.17** - فریم‌ورک CSS
-- **Framer Motion 12.23.12** - انیمیشن‌ها
-- **React Hot Toast 2.5.2** - اعلان‌ها
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-### State Management & Data Fetching
-- **React Query (@tanstack/react-query) 5.85.0** - مدیریت state و cache
-- **Axios 1.11.0** - درخواست‌های HTTP
-- **Context API** - مدیریت state محلی
+### `npm test`
 
-### Maps & Location
-- **@react-google-maps/api 2.20.7** - Google Maps
-- **Mapbox GL 1.13.3** - Mapbox Maps
-- **Leaflet 1.9.4** - نقشه‌های تعاملی
-- **@neshan-maps-platform/ol 1.0.5** - نقشه‌های ایرانی
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### UI Components
-- **@headlessui/react 2.2.7** - کامپوننت‌های UI
-- **@heroicons/react 2.2.0** - آیکون‌ها
-- **React Icons 5.5.0** - کتابخانه آیکون‌ها
+### `npm run build`
 
-### Utilities
-- **js-cookie 3.0.5** - مدیریت کوکی‌ها
-- **moment-jalaali 0.10.4** - تاریخ شمسی
-- **React OTP Input 3.1.1** - ورودی کد تایید
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## 📁 ساختار پروژه
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-src/
-├── components/           # کامپوننت‌های UI
-│   ├── atoms/           # کامپوننت‌های پایه (دکمه، ورودی، متن)
-│   ├── mulecules/       # کامپوننت‌های ترکیبی
-│   ├── organism/        # کامپوننت‌های پیچیده
-│   ├── template/        # قالب‌های صفحه
-│   └── utilits/         # کامپوننت‌های کمکی
-├── pages/               # صفحات اصلی
-│   ├── home.jsx         # صفحه اصلی
-│   ├── product-list.jsx # لیست محصولات
-│   ├── productId.jsx    # جزئیات محصول
-│   ├── cart.jsx         # سبد خرید
-│   ├── profile.jsx      # پروفایل کاربر
-│   ├── login.jsx        # ورود
-│   ├── search.jsx       # جستجو
-│   └── about-us.jsx     # درباره ما
-├── hooks/               # Custom Hooks
-│   ├── use-get-*.jsx    # Hooks دریافت داده
-│   ├── use-post-*.jsx   # Hooks ارسال داده
-│   └── use-patch-*.jsx  # Hooks به‌روزرسانی
-├── context/             # Context API
-│   └── CartContext.jsx  # مدیریت سبد خرید
-├── lib/                 # کتابخانه‌های کمکی
-├── assets/              # فایل‌های استاتیک
-└── entities/            # مدل‌های داده
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-## 🚀 نصب و راه‌اندازی
+### `npm run eject`
 
-### پیش‌نیازها
-- Node.js (نسخه 16 یا بالاتر)
-- npm یا yarn
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-### مراحل نصب
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-1. **کلون کردن پروژه**
-```bash
-git clone [repository-url]
-cd web-iranishop
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-2. **نصب وابستگی‌ها**
-```bash
-npm install
-```
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-3. **اجرای پروژه در حالت توسعه**
-```bash
-npm start
-```
+## Learn More
 
-پروژه در آدرس `http://localhost:3000` قابل دسترسی خواهد بود.
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### اسکریپت‌های موجود
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-```bash
-npm start          # اجرای پروژه در حالت توسعه
-npm run build      # ساخت نسخه تولید
-npm test           # اجرای تست‌ها
-npm run eject      # خروج از Create React App
-```
+### Code Splitting
 
-## 📱 صفحات و قابلیت‌ها
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### 🏠 صفحه اصلی (`/`)
-- نمایش بنرها و اسلایدرها
-- محصولات پرفروش
-- دسته‌بندی‌های محصولات
-- منوی مگا
+### Analyzing the Bundle Size
 
-### 📦 لیست محصولات (`/product-list/:id`)
-- نمایش محصولات بر اساس دسته‌بندی
-- فیلتر و مرتب‌سازی
-- صفحه‌بندی
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### 🛍️ جزئیات محصول (`/product-detail/:id`)
-- اطلاعات کامل محصول
-- گالری تصاویر
-- افزودن به سبد خرید
-- محصولات مشابه
+### Making a Progressive Web App
 
-### 🛒 سبد خرید (`/cart`)
-- مدیریت محصولات سبد خرید
-- تغییر تعداد
-- اعمال کد تخفیف
-- محاسبه قیمت نهایی
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### 👤 پروفایل کاربر (`/profile`)
-- اطلاعات شخصی
-- تاریخچه سفارشات
-- تنظیمات حساب
+### Advanced Configuration
 
-### 🔐 ورود (`/login`)
-- ورود با شماره موبایل
-- تایید با OTP
-- مدیریت نشست
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### 🔍 جستجو (`/search`)
-- جستجوی محصولات
-- فیلتر نتایج
-- مرتب‌سازی
+### Deployment
 
-## 🔧 مدیریت State
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### CartContext
-مدیریت سبد خرید با قابلیت‌های:
-- افزودن محصول
-- حذف محصول
-- تغییر تعداد
-- محاسبه قیمت
-- اعمال تخفیف
+### `npm run build` fails to minify
 
-```javascript
-const { cart, addToCart, removeFromCart, getTotal } = useCart();
-```
-
-### React Query
-مدیریت state سرور با:
-- Cache خودکار
-- Background updates
-- Error handling
-- Loading states
-
-## 🗺️ نقشه‌ها
-
-پروژه از چندین سرویس نقشه پشتیبانی می‌کند:
-- Google Maps
-- Mapbox
-- Leaflet
-- نقشه‌های نشان (Neshan)
-
-## 🎨 طراحی و UI
-
-### Tailwind CSS
-استفاده از Tailwind برای:
-- طراحی ریسپانسیو
-- کامپوننت‌های قابل تنظیم
-- انیمیشن‌ها
-- تم‌های سفارشی
-
-### کامپوننت‌ها
-ساختار Atomic Design:
-- **Atoms**: دکمه، ورودی، متن
-- **Molecules**: فرم‌ها، کارت‌ها
-- **Organisms**: هدر، فوتر، لیست محصولات
-- **Templates**: قالب‌های صفحه
-
-## 🔒 امنیت
-
-- مدیریت توکن‌ها با js-cookie
-- احراز هویت OTP
-- محافظت از مسیرها
-- اعتبارسنجی ورودی‌ها
-
-## 📊 تست
-
-```bash
-npm test           # اجرای تست‌ها
-npm run test:coverage  # تست با گزارش پوشش
-```
-
-## 🚀 استقرار
-
-### ساخت نسخه تولید
-```bash
-npm run build
-```
-
-### استقرار
-فایل‌های تولید شده در پوشه `build/` قرار می‌گیرند و آماده استقرار هستند.
-
-## 🤝 مشارکت
-
-1. Fork پروژه
-2. ایجاد branch جدید (`git checkout -b feature/AmazingFeature`)
-3. Commit تغییرات (`git commit -m 'Add some AmazingFeature'`)
-4. Push به branch (`git push origin feature/AmazingFeature`)
-5. ایجاد Pull Request
-
-## 📝 لایسنس
-
-این پروژه تحت لایسنس MIT منتشر شده است.
-
-## 📞 پشتیبانی
-
-برای سوالات و مشکلات:
-- ایجاد Issue در GitHub
-- تماس با تیم توسعه
-
----
-
-**توسعه‌دهنده**: تیم توسعه فروشگاه آنلاین ایرانی  
-**آخرین به‌روزرسانی**: 2024
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

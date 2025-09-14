@@ -7,14 +7,14 @@ function usePatchProfile() {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: async ({ phone, address, name, addressLat, addressLng, family , location }) => {
+        mutationFn: async ({ phone, address, name, addressLat, addressLng, family }) => {
 
             const data = qs.stringify({
                 phone: phone,
                 address: address,
                 name: name,
-                latitude: location?.features[0]?.bbox[2],
-                longitude: location?.features[0]?.bbox[3],
+                latitude: addressLat,
+                longitude: addressLng,
                 family: family
             });
             
@@ -22,12 +22,9 @@ function usePatchProfile() {
             return res.data;
         },
         onSuccess: (data) => {
-            // console.log(data)
             queryClient.removeQueries('getProfile');
         },
         onError: (err) => {
-            // console.log(err)
-
         }
     });
 }

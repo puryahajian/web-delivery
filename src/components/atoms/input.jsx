@@ -1,7 +1,7 @@
 import React from 'react'
 import IconSearch from '../../assets/image/Iconly/Light/Search.png'
 
-function Input({className, placeholder, classIcon, value, onChange, inputMode, defaultValue}) {
+function Input({className, placeholder, classIcon, value, onChange, inputMode}) {
     return (
         <div className="relative w-full">
             <span className={`absolute inset-y-0 right-0 flex items-center pr-3 text-gray-500 ${classIcon}`}>
@@ -22,7 +22,6 @@ function Input({className, placeholder, classIcon, value, onChange, inputMode, d
                 placeholder={placeholder}
                 value={value}
                 inputMode={inputMode}
-                defaultValue={defaultValue}
                 onChange={onChange}
             />
         </div>

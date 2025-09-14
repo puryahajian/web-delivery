@@ -3,7 +3,7 @@ import AvatarButtonHeader from '../mulecules/avatar-button-header'
 import MenuHeader from '../utilits/menu-header'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import Text from '../atoms/text'
-import Bag from '../../assets/image/Iconly/Bag.png'
+import Bag from '../../assets/image/Iconly/Bag.svg'
 import useGetOption from '../../hooks/use-get-option'
 import useGetProfile from '../../hooks/use-get-profile'
 import MegaMenu from '../../lib/mega-menu'
@@ -13,12 +13,13 @@ import ContentSearch from '../mulecules/seach/content-search'
 import ContentResponsSearch from '../mulecules/seach/content-respons-search'
 import UserIcon from '../../assets/image/Iconly/Profile.png'
 import User from '../../assets/image/Iconly/user (1).png'
-import IconArrow from '../../assets/image/Iconly/Iconly/Bold/Iconly/Bold/Arrow - Left 2.png'
-import BagWhite from '../../assets/image/Iconly/Iconly/Bold/Iconly/Bold/Bag-white.png'
+import IconArrow from '../../assets/image/Iconly/Arrow - Left 2.png'
+import BagWhite from '../../assets/image/Iconly/Iconly/Bold/Iconly/Bold/Bag.png'
 import { useLayoutEffect } from 'react'
 import { useRef } from 'react'
 import Cookies from "js-cookie";
 import DropDownMenu from '../mulecules/drop-down-menu'
+import '../../App.css'
 
 function TempHeader({ setModalLogOut }) {
     const {data} = useGetOption();
@@ -214,10 +215,10 @@ function TempHeader({ setModalLogOut }) {
                             />
                         )}
 
-                        <Link to='/cart' className="relative">
+                        <Link to='/cart' className="relative indexAvatarButtonHeader">
                             <AvatarButtonHeader
                                 src={BagWhite}
-                                className="flex items-center w-max rounded-[8px] font-bold !bg-BgCustom"
+                                className="flex items-center w-max rounded-[8px] font-bold !bg-Gray1"
                                 classImg="p-[10px] border-transparent"
                             />
                             <span className={`absolute -top-1 flex justify-center items-center -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full transition-all ease-in-out ${cart?.length === 0 ? 'hidden' : ''}`}>
@@ -229,7 +230,7 @@ function TempHeader({ setModalLogOut }) {
                         <button onClick={() => navigate(-1)}>
                             <AvatarButtonHeader
                                 src={IconArrow}
-                                className="flex items_center w-max rounded-[8px] font-bold bg-BgCustom"
+                                className="flex items_center w-max rounded-[8px] font-bold bg-BgBlue"
                                 classImg="p-[8px] border-transparent"
                             />
                         </button>
@@ -265,17 +266,17 @@ function TempHeader({ setModalLogOut }) {
                                 height={24} 
                                 viewBox="0 0 24 24">
                                     <path 
-                                        fill="#356554" 
+                                        fill="#ca4f4f" 
                                         d="M6.53 3.47a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0">
                                             </path>
                                             <path 
-                                            fill="#356554" 
+                                            fill="#ca4f4f" 
                                             fillRule="evenodd" 
                                             d="M12 4.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m.75 3.5a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" 
                                             clipRule="evenodd">
                                                 </path>
                                                 <path 
-                                                fill="#356554" 
+                                                fill="#ca4f4f" 
                                                 d="M17.47 4.53a.75.75 0 0 1 1.06-1.06l2.5 2.5a.75.75 0 0 1-1.06 1.06z">
                                     </path>
                             </svg>
@@ -305,7 +306,52 @@ function TempHeader({ setModalLogOut }) {
                         {accessToken ? (
                             <DropDownMenu
                                 buttonMenu={
-                                    <img src={UserIcon} className={`w-10 h-10 rounded-lg border bg-Gray1 border-BorderCustom `} alt="" srcset="" />
+                                    <div className='bg-Gray1 p-2 rounded-lg'>
+                                        <svg 
+                                            xmlns="http://www.w3.org/2000/svg" 
+                                            width={24} 
+                                            height={24} 
+                                            viewBox="0 0 24 24">
+                                                <g 
+                                                fill="#ca4f4f" 
+                                                fillOpacity={0} 
+                                                stroke="#ca4f4f" 
+                                                strokeLinecap="round" 
+                                                strokeLinejoin="round" 
+                                                strokeWidth={2}>
+                                                    <path 
+                                                    strokeDasharray={20} 
+                                                    strokeDashoffset={20} 
+                                                    d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z">
+                                                        <animate 
+                                                        fill="freeze"
+                                                        attributeName="stroke-dashoffset" 
+                                                        dur="0.4s" 
+                                                        values="20;0">
+                                                            </animate>
+                                                    </path>
+                                                    <path 
+                                                    strokeDasharray={36} 
+                                                    strokeDashoffset={36} 
+                                                    d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z">
+                                                        <animate 
+                                                        fill="freeze" 
+                                                        attributeName="stroke-dashoffset" 
+                                                        begin="0.5s" 
+                                                        dur="0.5s" 
+                                                        values="36;0">
+                                                            </animate>
+                                                            </path>
+                                                            <animate 
+                                                            fill="freeze" 
+                                                            attributeName="fill-opacity" 
+                                                            begin="1.1s" 
+                                                            dur="0.5s" 
+                                                            values="0;1">
+                                                                </animate>
+                                                            </g>
+                                        </svg>
+                                    </div>
                                 }
                                 text={`${dataProfile?.name === null ? 'نامشخص' : dataProfile?.name} ${dataProfile?.family === null ? '' : dataProfile?.family}`}
                                 buttonTop='ویرایش اطلاعات'

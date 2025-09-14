@@ -39,7 +39,7 @@ function OrgLogin() {
     }
 
     const handleSubmitVerify = () => {
-        console.log(otp, userName)
+        // console.log(otp, userName)
         mutateVerify(
             {
                 otp, userName
@@ -98,7 +98,7 @@ function OrgLogin() {
                                         }}>
                                         {isPending ? <Loading/> : "دریافت کد تأیید"}
                                     </Button>
-                                    <Button className={`bg-transparent w-full min-w-[150px] hidden max-[480px]:flex max-[480px]:justify-center max-[680px]:w-[100%] border border-BgCustom !text-BgCustom mt-6 py-4`} 
+                                    <Button className={`bg-transparent w-full min-w-[150px] hidden max-[480px]:flex max-[480px]:justify-center max-[680px]:w-[100%] border border-BorderBlue !text-BorderBlue mt-6 py-4`} 
                                          onClick={(e) =>{
                                              e.preventDefault()
                                             navigate('/')

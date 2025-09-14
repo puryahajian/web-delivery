@@ -4,7 +4,7 @@ import Title from '../../atoms/title'
 import useGetOption from '../../../hooks/use-get-option';
 
 function ContentLeft() {
-    const {data} = useGetOption();
+    const { data } = useGetOption();
 
     return (
         <div>

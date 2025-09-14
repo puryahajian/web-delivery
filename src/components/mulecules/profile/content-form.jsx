@@ -7,15 +7,15 @@ import usePatchProfile from '../../../hooks/use-patch-profile'
 import Loading from '../../atoms/loading'
 import toast from 'react-hot-toast'
 
-
 function ContentForm({ addressPreview , location}) {
-    const {data} = useGetProfile();
-    // console.log(addressPreview)
-    const {mutate, isPending} = usePatchProfile();
-    const [name, setName] = useState();
-    const [family, setFamily] = useState();
-    const [phone, setPhone] = useState();
-    const [address, setAddress] = useState();
+    const { data } = useGetProfile();
+    const { mutate, isPending } = usePatchProfile();
+    const [name, setName] = useState('');
+    const [family, setFamily] = useState('');
+    const [phone, setPhone] = useState('');
+    const [address, setAddress] = useState('');
+    const addressLat = addressPreview.latitude;
+    const addressLng = addressPreview.longitude;
 
     useEffect(() => {
         if (data) {
@@ -26,7 +26,6 @@ function ContentForm({ addressPreview , location}) {
         }
     }, [data]);
 
-    // اگر addressMapp تغییر کرد، مقدار input آدرس را با آن مقدار به‌روزرسانی کن
     useEffect(() => {
         if (addressPreview) {
             // نمایش آدرس به صورت رشته فارسی (مثلاً road, city, state, country)
@@ -42,9 +41,7 @@ function ContentForm({ addressPreview , location}) {
 
     const handleSubmit = (e) => {
         mutate(
-            {
-                name, phone, address, family, location
-            },
+            { name, phone, address, family ,location},
             {
                 onSuccess: () => {
                     toast.success('پروفایل با موفقیت به‌روزرسانی شد')
@@ -55,12 +52,12 @@ function ContentForm({ addressPreview , location}) {
 
     return (
         <div className='border-l border-BorderGray pl-6'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='grid grid-cols-2 gap-4'>
                     <div>
                         <div className='flex items-center gap-2'>
-                            <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
-                            <Text className={``}>نام</Text>
+                            <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-sm'/>
+                            <Text>نام</Text>
                         </div>
                         <Input
                             classIcon={`hidden`}
@@ -73,8 +70,8 @@ function ContentForm({ addressPreview , location}) {
                     </div>
                     <div>
                         <div className='flex items-center gap-2'>
-                            <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
-                            <Text className={``}>نام خانوادگی</Text>
+                            <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-sm'/>
+                            <Text>نام خانوادگی</Text>
                         </div>
                         <Input
                             classIcon={`hidden`}
@@ -88,8 +85,8 @@ function ContentForm({ addressPreview , location}) {
                 </div>
 
                 <div className='flex items-center gap-2 mt-4'>
-                    <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
-                    <Text className={``}>شماره موبایل</Text>
+                    <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-sm'/>
+                    <Text>شماره موبایل</Text>
                 </div>
                 <Input
                     classIcon={`hidden`}
@@ -101,18 +98,9 @@ function ContentForm({ addressPreview , location}) {
                 />
 
                 <div className='flex items-center gap-2 mt-4'>
-                    <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
-                    <Text className={``}>آدرس</Text>
+                    <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-sm'/>
+                    <Text>آدرس</Text>
                 </div>
-                
-                {/* نمایش پیش‌نمایش آدرس انتخاب شده از نقشه */}
-                {/* {addressPreview && (
-                    <div className="mt-2 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                        <Text className="text-sm text-blue-700 font-medium mb-1">آدرس انتخاب شده از نقشه:</Text>
-                        <Text className="text-sm text-gray-700">{addressPreview}</Text>
-                    </div>
-                )} */}
-                
                 <Input
                     classIcon={`hidden`}
                     className={`bg-transparent pr-5 placeholder:text-sm mt-[10px]`}
@@ -126,7 +114,7 @@ function ContentForm({ addressPreview , location}) {
                     e.preventDefault();
                     handleSubmit()
                 }} className={`mt-10 w-full py-4`}>
-                    {isPending ? <Loading/> : 'ذخیره پروفایل'}
+                    {isPending ? <Loading/> : 'به‌روزرسانی آدرس'}
                 </Button>
             </form>
         </div>

@@ -18,17 +18,16 @@ function ContentCategory() {
         navigate(`/product-list/${id}`);
     }
     return (
-        <div className=''>
+        <div>
             <div className='flex items-center gap-2'>
-                <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-lg'/>
-                <Text className={`font-bold text-BgCustom`}>دسته‌بندی‌ها</Text>
+                <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-lg'/>
+                <Text className={`font-bold text-BgBlue`}>دسته‌بندی‌ها</Text>
             </div>
 
             {/* items category */}
             <div className='flex gap-6 flex-wrap mt-4 max-[480px]:grid max-[480px]:grid-cols-4 max-[480px]:gap-2'>
                 {mainCategoriesOrder?.map((item, index) => (
                     <AvatarButton
-                        key={item?.id || index}
                         onTap={() => handleClick(item?.id)}
                         width="79px"
                         className={`w-max h-max ${index > 3 ? 'max-[480px]:hidden' : ''}`}

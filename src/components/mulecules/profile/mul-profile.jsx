@@ -13,8 +13,8 @@ import moment from 'moment-jalaali'
 import useGetProfile from '../../../hooks/use-get-profile'
 import { RiEdit2Fill } from "react-icons/ri";
 import { FaLocationDot } from "react-icons/fa6";
-import DocumentIcon from '../../../assets/image/Iconly/Iconly/Bold/Document.png'
-import ArrowLeftIcon from '../../../assets/image/Iconly/Iconly/Bold/Arrow - Left 2.png'
+import DocumentIcon from '../../../assets/image/Iconly/Document.png'
+import ArrowLeftIcon from '../../../assets/image/Iconly/Arrow - Left 2.png'
 import ModalGeneral from '../modal-general'
 import Input from '../../atoms/input'
 import usePatchProfile from '../../../hooks/use-patch-profile'
@@ -24,7 +24,6 @@ import Loading from '../../atoms/loading'
 import ModalGeneralBottom from '../modal-general-bottom'
 import Cookies from "js-cookie";
 import { Link, useNavigate } from 'react-router-dom'
-import Rial from '../../../assets/image/Iconly/Iconly/Bold/Frame.png'
 import IconInfo from '../../../assets/image/Iconly/file.png'
 import IconSupport from '../../../assets/image/Iconly/support (1).png'
 
@@ -41,10 +40,11 @@ function MulProfile() {
     const [modalExitMobile, setModalExitMobile] = useState(false)
     const [name, setName] = useState();
     const [family, setFamily] = useState();
-    const [address, setAddress] = useState('');
+    const [address, setAddress] = useState(dataProfile?.address);
     const [addressLat, setAddressLat] = useState(null);
     const [addressLng, setAddressLng] = useState(null);
     const [location, setLocation] = useState(null);
+    // console.log(location)
     const navigate = useNavigate()
 
     // اگر addressMapp تغییر کرد، مقدار input آدرس را با آن مقدار به‌روزرسانی کن
@@ -63,13 +63,14 @@ function MulProfile() {
     }, [addressPreview]);
 
     // useEffect(() => {
-    //     if (data) {
-    //         setName(dataProfile.name || '');
-    //         setPhone(dataProfile.phone || '');
-    //         setAddress(dataProfile.address || '');
-    //         setFamily(dataProfile.family || '')
+    //     if (dataProfile) {
+    //         if (dataProfile?.name) setName(dataProfile.name);
+    //         if (dataProfile?.family) setFamily(dataProfile.family);
+    //         if (dataProfile?.address) setAddress(dataProfile.address);
+    //         if (dataProfile?.addressLat) setAddressLat(dataProfile.addressLat);
+    //         if (dataProfile?.addressLng) setAddressLng(dataProfile.addressLng);
     //     }
-    // }, [data]);
+    // }, [dataProfile]);
 
     const handleSuccess = () => {
         mutate(
@@ -123,7 +124,7 @@ function MulProfile() {
             <TempBoxMain className={`max-[480px]:hidden`}>
                 <TempBoxWhite>
                     <div className='items-center gap-2 hidden max-[480px]:flex'>
-                        <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
+                        <div className='border-2 border-BorderBlue bg-BgBlue w-6 h-2 rounded-sm'/>
                         <Text className={`font-bold !text-base`}>پروفایل</Text>
                     </div>
                     <div className='grid grid-cols-2 max-[480px]:mt-6'>
@@ -135,7 +136,7 @@ function MulProfile() {
                 {/* orders */}
                 <TempBoxWhite className='mt-4'>
                     <div className='flex items-center gap-2 mb-4'>
-                        <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
+                        <div className='border-2 border-BorderBlue bg-BgBlue w-6 h-2 rounded-sm'/>
                         <Text className='font-bold !text-base'>سفارش‌ها</Text>
                     </div>
                     <div className='overflow-x-auto'>
@@ -196,7 +197,7 @@ function MulProfile() {
 
                 <div>
                     <div className='flex items-center gap-2 mb-4'>
-                        <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
+                        <div className='border-2 border-BorderBlue bg-BgBlue w-6 h-2 rounded-sm'/>
                         <Text className='font-bold !text-base'>آدرس</Text>
                     </div>
                     <div className='flex justify-between items-center'>
@@ -315,14 +316,14 @@ function MulProfile() {
                 classModal={`!w-[90%]`}
                 >
                 <div className='flex items-center gap-2 mb-2'>
-                    <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
+                    <div className='border-2 border-BorderBlue bg-BgBlue w-6 h-2 rounded-sm'/>
                     <Text className={``}>لطفاً موقعیت جغرافیایی خود را وارد کنید</Text>
                 </div>
 
                 <Mapp setAddressPreview={setAddressPreview} setLocation={setLocation} />
 
                 <div className='flex items-center gap-2 mt-4 mb-2'>
-                    <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
+                    <div className='border-2 border-BorderBlue bg-BgBlue w-6 h-2 rounded-sm'/>
                     <Text className={``}>آدرس دقیق‌تری وارد کنید</Text>
                 </div>
 

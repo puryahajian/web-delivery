@@ -11,7 +11,7 @@ function MulProductId() {
     return (
         <div>
             <TempBoxMain>
-                <TempHeader />
+                <TempHeader/>
                 <ContentProduct/>
                 <TempFooter/>
             </TempBoxMain>

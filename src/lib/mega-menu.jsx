@@ -34,7 +34,7 @@ function MegaMenu() {
     const fullTree = data?.length > 0 ? buildTree(data) : [];
     // فقط ریشه‌هایی که order !== 0 هستن نگه داریم
     const tree = fullTree.filter(cat => cat.order !== 0);
-    // console.log(tree)
+
     // وقتی داده‌ها تغییر کرد، دسته اول را فعال کن
     useEffect(() => {
         if (tree?.length > 0 && !activeCategory) {
@@ -47,7 +47,7 @@ function MegaMenu() {
     };
     // console.log(tree)
 
-    if (isLoading) return <p>در حال بارگذاری</p>;
+    if (isLoading) return <p>در حال بارگذاری...</p>;
 
     return (
         <div
@@ -55,6 +55,7 @@ function MegaMenu() {
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
         >
+
         {/* هدر */}
         <div className="container content-mega-menu flex items-center btn-megaMenu">
             <button className="pl-4 border-l border-Gray1 bg-transparent">
@@ -80,7 +81,7 @@ function MegaMenu() {
                 right: "0px",
                 boxShadow: "0px 16px 38px -13px rgb(204, 204, 204)",
                 }}
-                className="absolute left-0 top-full bg-white shadow-xl"
+                className="absolute left-0 top-full bg-white shadow-xl border-t"
             >
                 <div className="container mx-auto flex">
                 {/* لیست دسته‌های اصلی */}
@@ -125,7 +126,7 @@ function MegaMenu() {
                             ))
                         ) : (
                             <p className="text-gray-400 col-span-2 text-sm">
-                            زیرمجموعه‌ای وجود ندارد  
+                                زیرمجموعه‌ای موجود نیست
                             </p>
                         )}
                         </div>

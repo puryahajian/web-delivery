@@ -1,6 +1,4 @@
 import React from "react";
-import Rial from '../../assets/image/Iconly/Iconly/Bold/Frame.png'
-
 
 export const AvatarButton = ({ config = {} }) => {
   const {
@@ -9,7 +7,7 @@ export const AvatarButton = ({ config = {} }) => {
     height = 40,
     border = "1px solid transparent",
     borderRadius = "0",
-    backgroundColor = "#ff881a",
+    backgroundColor = "#ca4f4f",
     icon,
     iconColor = "black",
     iconSize = 24,
@@ -157,7 +155,7 @@ export const CardShopProductWallet = ({
           }}
         >
           <div>
-            <div style={style} className="flex items-center">{price} <span className="text-[14px]">تومان</span></div>
+            <div style={style}>{price}</div>
             {priceOffer && (
               <div
                 style={{

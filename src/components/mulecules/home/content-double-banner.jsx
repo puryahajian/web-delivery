@@ -17,7 +17,7 @@ function ContentDoubleBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${data?.[0]?.image}`}
+                image={`https://api.nowdesign.ir${data?.[0]?.image}`}
                 boxFit="cover"
             />
             <AvatarButton
@@ -28,7 +28,7 @@ function ContentDoubleBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.iranishop.om${data?.[1]?.image}`}
+                image={`https://api.nowdesign.ir${data?.[1]?.image}`}
                 boxFit="cover"
             />
         </div>

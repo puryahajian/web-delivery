@@ -8,7 +8,6 @@ import ModalGeneralBottom from '../modal-general-bottom'
 import ItemCardActiveOrderMobile from "./item-card-active-order-mobile";
 import Img from '../../../assets/image/item-discount.png'
 import moment from "moment-jalaali";
-import Rial from "../../../assets/image/Iconly/Iconly/Bold/Frame.png"
 
 
 function ActiveOrderMobile () {
@@ -53,6 +52,7 @@ function ActiveOrderMobile () {
     return(
         <>
             <TempHeader/>
+            
             <div className={`mt-[80px] mx-4`}>
                 <CardActiveOrderMobile 
                     setModalDetailOrder={setModalDetailOrder}

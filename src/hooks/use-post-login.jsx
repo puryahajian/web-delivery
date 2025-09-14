@@ -11,7 +11,7 @@ function usePostLogin() {
     return useMutation({
         mutationFn: async ({ userName }) => {
             console.log(userName)
-            const data = qs.stringify({
+            const data = JSON.stringify({
                 phone: userName,
             });
 

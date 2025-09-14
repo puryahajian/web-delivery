@@ -2,19 +2,24 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const interceptor = axios.create({
-  baseURL: "https://api.iranishop.om/",  
+  baseURL: "https://api.nowdesign.ir/",  
 });
 
 interceptor.interceptors.request.use(
   (config) => {
-    config.headers['Content-Type'] = 'multipart/form-data';
-    const accessToken = Cookies.get('access');
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    config.headers['Accept'] = 'application/json';
-    if (accessToken) {
-      config.headers['Authorization'] = `Bearer ${accessToken}`;
+    const accessToken = Cookies.get("access");
+
+    // فقط وقتی نیاز داری Content-Type رو ست کن
+    if (!config.headers["Content-Type"]) {
+      config.headers["Content-Type"] = "application/json";
     }
-    
+
+    config.headers["Accept"] = "application/json";
+
+    if (accessToken) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
+    }
+
     return config;
   },
   (error) => Promise.reject(error)
@@ -33,7 +38,7 @@ interceptor.interceptors.response.use(
 
       if (refreshToken) {
         try {
-          const { data } = await axios.post('https://api.iranishop.om/account/api/v1/refresh/', { refresh: refreshToken });
+          const { data } = await axios.post('https://api.nowdesign.ir/account/api/v1/refresh/', { refresh: refreshToken });
           const newAccessToken = data.access;
           Cookies.set('access', newAccessToken, { expires: 365, path: '/' });
           originalRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;

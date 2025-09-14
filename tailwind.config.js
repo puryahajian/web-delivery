@@ -6,13 +6,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        BorderCustom: "#356554",
-        BgCustom: "#356554",
-        ColorButtom: "#ff881a",
-        BgTimer: "#fdede7",
+        BorderBlue: "#ca4f4f",
+        BgBlue: "#ca4f4f",
         BgFooter: "#454545",
         BorderGray: "#BCBCBC",
-        Gray1: "#f7f7f7",
+        BgTimer: "#f3d8d8",
+        Gray1: "#E6E6E6",
       },
       fontFamily: {
         sans: ["sans"],

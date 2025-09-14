@@ -11,7 +11,7 @@ function usePostVerify() {
 
     return useMutation({
         mutationFn: async ({ otp, userName }) => {
-            const data = qs.stringify({
+            const data = JSON.stringify({
                 phone: userName,
                 password: otp
             });

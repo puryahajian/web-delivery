@@ -1,6 +1,4 @@
 import React from "react";
-import Rial from '../../assets/image/Iconly/Iconly/Bold/Frame.png'
-
 
 export function AvatarButtonConfigCardShopProductWallet2({
   onTap,
@@ -8,7 +6,7 @@ export function AvatarButtonConfigCardShopProductWallet2({
   height = 40,
   // border = "1px solid black",
   borderRadius = "8px",
-  color = "#f15923",
+  color = "#ca4f4f",
   icon = "❄",
   colorIcon = "black",
   sizeIcon = 24
@@ -48,8 +46,7 @@ export function CardShopProductWallet2({
   style = { color: "black", fontSize: 14 },
   check = false,
   avatarButtonConfigRemove,
-  avatarButtonConfigAdd,
-  onClick
+  avatarButtonConfigAdd
 }) {
   return (
     <div
@@ -76,7 +73,6 @@ export function CardShopProductWallet2({
             borderRadius: borderRadiusCard,
             overflow: "hidden"
           }}
-          onClick={onClick}
         >
           <img
             src={imageCard}
@@ -101,14 +97,13 @@ export function CardShopProductWallet2({
               textOverflow: "ellipsis",
             }}
             className="font-bold font-sans text-sm"
-            onClick={onClick}
           >
             {product}
           </span>
           <div style={{ height: 8 }}></div>
           <hr style={{ border: "none", borderTop: "1px solid rgba(0,0,0,0.26)", margin: "0" }} />
           <div style={{ height: 8 }}></div>
-          <span style={{...style, display: "flex", alignItems: "center", gap: "8px"}}>{price} تومان</span>
+          <span style={style}>{price}</span>
         </div>
       </div>
 

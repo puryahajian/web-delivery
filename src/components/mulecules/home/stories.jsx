@@ -81,11 +81,11 @@ export default function StoryCarousel() {
     }, [lightboxIndex]);
 
     return (
-        <div className="relative max-[480px]:mx-[5px] flex mt-4 items-center">
+        <div className="relative flex mt-20 items-center">
             {/* دکمه چپ */}
             <button
                 onClick={() => scroll("left")}
-                className="absolute z-10 left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow p-2 opacity-80 hover:opacity-100 transition max-[480px]:hidden"
+                className="absolute z-10 left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow p-2 opacity-80 hover:opacity-100 transition"
             >
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </button>
@@ -93,7 +93,7 @@ export default function StoryCarousel() {
             {/* استوری‌ها */}
             <div
                 ref={scrollRef}
-                className="flex overflow-x-auto gap-4 py-4 max-[480px]:py-2 px-8 max-[480px]:px-0 scrollbar-hide w-full"
+                className="flex overflow-x-auto gap-4 py-4 px-8 scrollbar-hide w-full"
             >
                 {stories?.map((story, idx) => (
                 <div
@@ -117,7 +117,7 @@ export default function StoryCarousel() {
             {/* دکمه راست */}
             <button
                 onClick={() => scroll("right")}
-                className="absolute z-10 right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow p-2 opacity-80 hover:opacity-100 transition max-[480px]:hidden"
+                className="absolute z-10 right-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow p-2 opacity-80 hover:opacity-100 transition"
             >
                 <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
             </button>

@@ -11,7 +11,7 @@ import toast from 'react-hot-toast'
 function BestSeller() {
     const {data} = useGetBestSeller();
     // console.log(data)
-    const { addToCart } = useCart();
+    const { cart, addToCart } = useCart();
     // console.log(cart)
     const navigate = useNavigate();
     const sliderRef = useRef(null);
@@ -33,7 +33,6 @@ function BestSeller() {
             sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
         }
     }
-    
     // Group items in pairs for vertical stacking
     const grouped = [];
     if (data?.results?.length) {
@@ -42,10 +41,10 @@ function BestSeller() {
         }
     }
     return (
-        <div className='mt-[72px] max-[480px]:mt-0'>
+        <div className='mt-[72px] max-[480px]:mt-8'>
             <div className='flex items-center gap-2 mb-6'>
-                <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-sm'/>
-                <Text className={`font-bold text-BgCustom`}>پرفروش‌ها</Text>
+                <div className='border-2 border-BorderBlue bg-BorderBlue w-6 h-2 rounded-sm'/>
+                <Text className={`font-bold text-BgBlue`}>پرفروش‌ترین</Text>
             </div>
             <div className='relative'>
                 <button onClick={() => scrollSlider('left')} className='absolute z-10 left-0 top-1/2 -translate-y-1/2 bg-white rounded-full shadow p-2 opacity-80 hover:opacity-100 transition max-[480px]:hidden'>
@@ -64,8 +63,8 @@ function BestSeller() {
                                     borderRadiusCard="8px"
                                     backgroundColorCard="white"
                                     product={item?.name}
-                                    price={`${item?.price?.toLocaleString('fa-IR')}`}
-                                    style={{ color: "#222", fontWeight: "bold" , display: "flex", alignItems: "center"}}
+                                    price={`${item?.price?.toLocaleString('fa-IR')} تومان`}
+                                    style={{ color: "#222", fontWeight: "bold" }}
                                     styleOffer={{ fontSize: "13px" }}
                                     avatarButtonConfig={{
                                         onClick: () => handleGetData(item),

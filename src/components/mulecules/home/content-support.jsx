@@ -24,26 +24,25 @@ function ContentSupport() {
     return (
         <div className='mt-[72px] grid grid-cols-5 max-[1200px]:grid-cols-2 gap-4 max-[480px]:hidden'>
             <div style={styleBox}>
-                <img src={Box} style={style} alt="" srcset="" />
+                <img src={Box} style={style} alt="" />
                 <Text>امکان ارسال سریع</Text>
             </div>
             <div style={styleBox}>
-                <img src={Pay} style={style} alt="" srcset="" />
+                <img src={Pay} style={style} alt="" />
                 <Text>امکان پرداخت در محل</Text>
             </div>
             <div style={styleBox}>
-                <img src={Talking} style={style} alt="" srcset="" />
+                <img src={Talking} style={style} alt="" />
                 <Text>پشتیبانی ۲۴/۷</Text>
             </div>
             <div style={styleBox}>
-                <img src={Take} style={style} alt="" srcset="" />
-                <Text>هفت روز ضمانت بازگشت کالا</Text>
+                <img src={Take} style={style} alt="" />
+                <Text>۷ روز ضمانت بازگشت کالا</Text>
             </div>
             <div style={styleBox}>
-                <img src={Certi} style={style} alt="" srcset="" />
+                <img src={Certi} style={style} alt="" />
                 <Text>ضمانت اصالت کالا</Text>
             </div>
-
         </div>
     )
 }

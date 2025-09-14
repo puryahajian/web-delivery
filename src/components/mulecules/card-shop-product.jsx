@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Rial from '../../assets/image/Iconly/Iconly/Bold/Frame.png'
 
 export function AvatarButtonCardShopProduct({ config = {} }) {
   const {
@@ -17,13 +16,12 @@ export function AvatarButtonCardShopProduct({ config = {} }) {
   return (
     <div
       onClick={onTap}
-      className="bg-ColorButtom"
       style={{
         width,
         height,
         border,
         borderRadius,
-        // backgroundColor: "##FFD49D",
+        backgroundColor: "#ca4f4f",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -89,7 +87,7 @@ export function CardShopProduct({
         alignItems: "center",
         cursor: onTapCard ? "pointer" : "default",
         width: width,
-        minWidth: "180px",
+        minWidth: "150px",
         boxSizing: "border-box",
       }}
     >
@@ -159,14 +157,10 @@ export function CardShopProduct({
               ...stylePrice,
               color: stylePrice?.color || "black",
               fontSize: stylePrice?.fontSize || 14,
-              textDecoration: "line-through",
-              display: "flex",
-              alignItems: "center",
-              gap: "8px"
+              textDecoration: "line-through"
             }}
             >
             {price}
-            تومان
           </div>
           {priceOffer && (
             <div
@@ -174,14 +168,9 @@ export function CardShopProduct({
                 ...styleOffer,
                 color: styleOffer?.color || "red",
                 fontSize: styleOffer?.fontSize || 14,
-                // display: "flex",
-                alignItems: "center",
-                // gap: "16px"
               }}
-              className="flex gap-2"
               >
               {priceOffer}
-              <span>تومان</span>
             </div>
           )}
         </div>

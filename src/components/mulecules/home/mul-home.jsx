@@ -12,7 +12,8 @@ import useGetOption from '../../../hooks/use-get-option'
 import StoryCarousel from './stories'
 import ContentFourBanner from './content-four-banner'
 import ContentSupport from './content-support'
-import Text from '../../atoms/text'
+
+
 
 function MulHome({setModalLogOut}) {
     const {data} = useGetOption();
@@ -31,17 +32,17 @@ function MulHome({setModalLogOut}) {
                         height={24} 
                         viewBox="0 0 24 24">
                             <path 
-                                fill="#356554" 
+                                fill="#ca4f4f" 
                                 d="M6.53 3.47a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0">
                                     </path>
                                     <path 
-                                    fill="#356554" 
+                                    fill="#ca4f4f" 
                                     fillRule="evenodd" 
                                     d="M12 4.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m.75 3.5a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" 
                                     clipRule="evenodd">
                                         </path>
                                         <path 
-                                        fill="#356554" 
+                                        fill="#ca4f4f" 
                                         d="M17.47 4.53a.75.75 0 0 1 1.06-1.06l2.5 2.5a.75.75 0 0 1-1.06 1.06z">
                             </path>
                     </svg>
@@ -51,27 +52,26 @@ function MulHome({setModalLogOut}) {
                         ) : (
                             <>
                             ساعات کاری از ساعت 
-                                <span className="text-BgCustom">{data?.results[0]?.open_time?.slice(0, -3)}</span>
+                                <span className="text-BgBlue">{data?.results[0]?.open_time?.slice(0, -3)}</span>
                                 تا 
-                                <span className="text-BgCustom">{data?.results[0]?.close_time?.slice(0, -3)}</span>
+                                <span className="text-BgBlue">{data?.results[0]?.close_time?.slice(0, -3)}</span>
                             </>
                         )}
                     </div>
                 </div>
-                {/* story */}
                 {/* <StoryCarousel/> */}
             </TempBoxMain>
 
             <div className='max-[480px]:p-2 max-[480px]:mx-4 max-[480px]:border max-[480px]:border-Gray1 max-[480px]:rounded-lg max-[480px]:mt-[16px]'>
                 <AvatarButton
                     // onTap={handleClick}
-                    // width="100%"
+                    width="100%"
                     className={`w-full mt-3 max-[480px]:mt-0 h-[400px] max-[480px]:h-[160px]`}
                     height="100%"
                     padding={0}
-                    borderRadius="0px"
-                    border='black'
-                    borderRadiusImage="0px"
+                    borderRadius="0"
+                    border='white'
+                    borderRadiusImage="4px"
                     check={true}
                     image={getData?.banner_one}
                     boxFit="cover"
@@ -82,7 +82,7 @@ function MulHome({setModalLogOut}) {
                 <hr className='w-[85%] m-auto' />
             </div>
 
-            <TempBoxMain className={`mt-[72px]`}>
+            <TempBoxMain>
 
                 <ContentCategory/>
 
@@ -109,10 +109,6 @@ function MulHome({setModalLogOut}) {
                     image={getData?.banner_two}
                     boxFit="cover"
                 />
-
-                <div className='hidden max-[480px]:flex max-[480px]:my-6'>
-                    <hr className='w-[85%] m-auto' />
-                </div>
 
                 <BestSeller/>
 

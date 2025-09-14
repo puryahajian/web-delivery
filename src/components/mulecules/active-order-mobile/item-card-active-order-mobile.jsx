@@ -1,6 +1,5 @@
 import React from "react"
 import Text from "../../atoms/text"
-import Rial from "../../../assets/image/Iconly/Iconly/Bold/Frame.png"
 
 function ItemCardActiveOrderMobile ({
     name,
