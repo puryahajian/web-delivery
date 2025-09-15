@@ -6,14 +6,14 @@ function usePostAddToCart() {
     const queryClient = useQueryClient();
 
     return useMutation({
-        mutationFn: async ({ idsString, quantity = 1 }) => {
-            // console.log(itemId)
+        mutationFn: async ({ id, quantity }) => {
+            console.log(id, quantity)
             const data = {
                 delivery_method : 5525,
                 payment_method: 2319,
                 items: [
                     {
-                        product_id: idsString,
+                        product_id: id,
                         quantity: quantity
                     }
                 ],

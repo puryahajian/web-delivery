@@ -92,17 +92,22 @@ export const CartProvider = ({ children }) => {
     };
 
     useEffect(() => {
-        if (cart) {
-            const dataId = cart?.map((id) => id?.data?.id);
-            const ids = dataId?.map((item) => item);
-            const idsString = ids.join(",");
-            console.log(idsString);
-
-            mutate(idsString, {
-                onSuccess: (data) => console.log(data),
+        if (cart.length > 0) {
+            const lastItem = cart[cart.length - 1]; // آخرین آیتم
+            const lastId = lastItem?.data?.id;
+            const lastQuantity = lastItem?.quantity;
+          
+            console.log("آخرین id:", lastId);
+            console.log("آخرین quantity:", lastQuantity);
+          
+            mutate(
+              { id: lastId, quantity: lastQuantity }, // 👈 فرستادن id + quantity
+              {
+                onSuccess: (data) => console.log("Cart synced:", data),
                 onError: (err) => console.error("Failed to sync cart:", err),
-            });
-        }
+              }
+            );
+          }
     }, [cart, mutate]);
     console.log(cart)
 
