@@ -1,4 +1,5 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
+import usePostAddToCart from '../hooks/use-post-add-to-cart';
 
 const CartContext = createContext(null);
 export const useCart = () => useContext(CartContext);
@@ -9,6 +10,9 @@ const DISCOUNT_CODES = {
 };
 
 export const CartProvider = ({ children }) => {
+    const { mutate } = usePostAddToCart();
+
+
     const [cart, setCart] = useState(() => {
         const saved = localStorage.getItem("cart");
         return saved ? JSON.parse(saved) : [];
@@ -86,6 +90,21 @@ export const CartProvider = ({ children }) => {
         const rate = DISCOUNT_CODES[code] || 0;
         return getTotal() * rate;
     };
+
+    useEffect(() => {
+        if (cart) {
+            const dataId = cart?.map((id) => id?.data?.id);
+            const ids = dataId?.map((item) => item);
+            const idsString = ids.join(",");
+            console.log(idsString);
+
+            mutate(idsString, {
+                onSuccess: (data) => console.log(data),
+                onError: (err) => console.error("Failed to sync cart:", err),
+            });
+        }
+    }, [cart, mutate]);
+    console.log(cart)
 
     return (
         <CartContext.Provider

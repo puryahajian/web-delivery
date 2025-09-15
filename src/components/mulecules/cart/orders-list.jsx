@@ -95,7 +95,7 @@ function OrdersList() {
             </div>
 
             <div className='grid gap-4'>
-                {!access ? (
+                {/* {!access ? ( */}
                     <>
                     {cart.map((item, index) => (
                         <CardShopProductWallet2
@@ -126,9 +126,9 @@ function OrdersList() {
                         />
                     ))}
                     </>
-                ) : (
+                {/* // ) : ( */}
                     <>
-                   {dataGetCart?.results?.map((order) => (
+                   {/* {dataGetCart?.results?.map((order) => (
                         order?.items?.map((item) => (
                             <CardShopProductWallet2
                             key={item?.id}
@@ -165,9 +165,9 @@ function OrdersList() {
                             }}
                             />
                         ))
-                        ))}
+                        ))} */}
                     </>
-                )}
+                {/* // )} */}
             </div>
             <div className='m-auto text-center mt-6'>
                 {!access ? (

@@ -26,19 +26,20 @@ function ContentDiscount() {
         toast.success('به سبد خرید اضافه شد');
     }
 
-    const handleAddToCart = (itemId) => {
-        mutate(
-            { 
-                itemId 
-            },
-            {
-              onSuccess: (data) => {
-                toast.success('محصول به سبد اضافه شد')
-                // console.log(data)
-              },
-            }
-        );
-    }
+    // const handleAddToCart = (itemId) => {
+    //     mutate(
+    //         { 
+    //             itemId 
+    //         },
+    //         {
+    //           onSuccess: (data) => {
+    //             console.log(data)
+    //             toast.success('محصول به سبد اضافه شد')
+    //             // console.log(data)
+    //           },
+    //         }
+    //     );
+    // }
     
     const scrollSlider = (direction) => {
         if (!sliderRef.current) return;
@@ -81,12 +82,7 @@ function ContentDiscount() {
                             styleOffer={{ fontSize: 14, display: item?.discounted_price === 0 ? "none" : "block" }}
                             avatarButtonConfigCardShopProduct={{
                                 onTap: () => {
-                                    if (!accessToken) {
-                                        handleClick(item)
-                                        
-                                    } else (
-                                        handleAddToCart(item?.id)
-                                    )
+                                    handleClick(item)
                                 },
                                 width: 40,
                                 height: 40,
