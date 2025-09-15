@@ -104,7 +104,7 @@ function AddressLeft() {
                     if (!access) {
                         toast.error('لطفاً وارد شوید');
                     }
-                    }} className={`w-full py-4 ${!access ? 'bg-gray-400 cursor-not-allowed max-[480px]:hidden' : 'max-[480px]:flex max-[480px]:justify-center'}`}>
+                    }} className={`w-full py-4 ${!access ? 'bg-gray-400 cursor-not-allowed max-[480px]:hidden' : 'max-[480px]:flex max-[480px]:justify-center bg-BgCustom'}`}>
                     ثبت سفارش
                 </Button>
             </div>

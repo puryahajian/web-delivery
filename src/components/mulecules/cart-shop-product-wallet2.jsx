@@ -8,7 +8,7 @@ export function AvatarButtonConfigCardShopProductWallet2({
   height = 40,
   // border = "1px solid black",
   borderRadius = "8px",
-  color = "#f15923",
+  // color = "#f15923",
   icon = "❄",
   colorIcon = "black",
   sizeIcon = 24
@@ -16,6 +16,7 @@ export function AvatarButtonConfigCardShopProductWallet2({
   return (
     <div
       onClick={onTap || (() => {})}
+      className="bg-BgCustom"
       style={{
         width,
         height,
@@ -24,7 +25,7 @@ export function AvatarButtonConfigCardShopProductWallet2({
         justifyContent: "center",
         // border,
         borderRadius,
-        backgroundColor: color,
+        // backgroundColor: color,
         cursor: "pointer",
         boxSizing: "border-box"
       }}

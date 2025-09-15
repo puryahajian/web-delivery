@@ -9,7 +9,7 @@ export const AvatarButton = ({ config = {} }) => {
     height = 40,
     border = "1px solid transparent",
     borderRadius = "0",
-    backgroundColor = "#ff881a",
+    // backgroundColor = "#ff881a",
     icon,
     iconColor = "black",
     iconSize = 24,
@@ -18,12 +18,13 @@ export const AvatarButton = ({ config = {} }) => {
   return (
     <button
       onClick={onClick}
+      className="bg-ColorButtom"
       style={{
         width: width,
         height: height,
         border,
         borderRadius: borderRadius,
-        backgroundColor,
+        // backgroundColor,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

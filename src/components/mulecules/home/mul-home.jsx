@@ -24,40 +24,36 @@ function MulHome({setModalLogOut}) {
 
             <TempBoxMain className={`mt-[98px] max-[480px]:mt-[117px]`}>
                 {/* time shop */}
-                <div className="items-center gap-1 mt-32 bg-BgTimer py-2 px-2 rounded-lg hidden max-[480px]:flex max-[480px]:justify-between">
-                    <svg 
-                        xmlns="http://www.w3.org/2000/svg" 
-                        width={24} 
-                        height={24} 
-                        viewBox="0 0 24 24">
-                            <path 
-                                fill="#356554" 
-                                d="M6.53 3.47a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0">
-                                    </path>
-                                    <path 
+                    {data?.results[0]?.open_time === null ? (
+                        ''
+                    ) : (
+                        <div className="items-center gap-1 mt-32 bg-BgTimer py-2 px-2 rounded-lg hidden max-[480px]:flex max-[480px]:justify-between">
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width={24} 
+                            height={24} 
+                            viewBox="0 0 24 24">
+                                <path 
                                     fill="#356554" 
-                                    fillRule="evenodd" 
-                                    d="M12 4.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m.75 3.5a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" 
-                                    clipRule="evenodd">
+                                    d="M6.53 3.47a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0">
                                         </path>
                                         <path 
                                         fill="#356554" 
-                                        d="M17.47 4.53a.75.75 0 0 1 1.06-1.06l2.5 2.5a.75.75 0 0 1-1.06 1.06z">
-                            </path>
-                    </svg>
-                    <div className='flex gap-2'>
-                        {data?.results[0]?.open_time === null ? (
-                            ' غير متوفر '
-                        ) : (
-                            <>
-                            ساعات کاری از ساعت 
-                                <span className="text-BgCustom">{data?.results[0]?.open_time?.slice(0, -3)}</span>
-                                تا 
-                                <span className="text-BgCustom">{data?.results[0]?.close_time?.slice(0, -3)}</span>
-                            </>
-                        )}
-                    </div>
-                </div>
+                                        fillRule="evenodd" 
+                                        d="M12 4.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m.75 3.5a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" 
+                                        clipRule="evenodd">
+                                            </path>
+                                            <path 
+                                            fill="#356554" 
+                                            d="M17.47 4.53a.75.75 0 0 1 1.06-1.06l2.5 2.5a.75.75 0 0 1-1.06 1.06z">
+                                </path>
+                        </svg>
+                        ساعات کاری از ساعت 
+                            <span className="text-BgCustom">{data?.results[0]?.open_time?.slice(0, -3)}</span>
+                            تا 
+                            <span className="text-BgCustom">{data?.results[0]?.close_time?.slice(0, -3)}</span>
+                        </div>
+                    )}
                 {/* story */}
                 {/* <StoryCarousel/> */}
             </TempBoxMain>
@@ -71,7 +67,7 @@ function MulHome({setModalLogOut}) {
                     padding={0}
                     borderRadius="0px"
                     border='black'
-                    borderRadiusImage="0px"
+                    borderRadiusImage="4px"
                     check={true}
                     image={getData?.banner_one}
                     boxFit="cover"

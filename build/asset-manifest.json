@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.9679f86d.css",
-    "main.js": "/static/js/main.6c78d000.js",
+    "main.css": "/static/css/main.72e78015.css",
+    "main.js": "/static/js/main.1673ccc8.js",
     "static/js/879.f92100b4.chunk.js": "/static/js/879.f92100b4.chunk.js",
     "static/js/453.0735721a.chunk.js": "/static/js/453.0735721a.chunk.js",
     "static/media/banner-1.png": "/static/media/banner-1.fc4d598c3a0f620a3e41.png",
     "static/media/IRANSans.ttf": "/static/media/IRANSans.6a10d7a5fb2bcdd12953.ttf",
     "static/media/Sans Bold.ttf": "/static/media/Sans Bold.53df38d5491afbeb42a5.ttf",
     "static/media/item-discount.png": "/static/media/item-discount.c72308f6f991f8a8322f.png",
-    "static/media/undraw_team-spirit_18vw.svg": "/static/media/undraw_team-spirit_18vw.e99dca76a98551097bc04168fea6573c.svg",
-    "static/media/package.svg": "/static/media/package.cd14a96ae79d90620b112d075dfb433f.svg",
-    "static/media/undraw_take-out-boxes_n094.svg": "/static/media/undraw_take-out-boxes_n094.733b827bc495586551bc08b6bad64546.svg",
-    "static/media/undraw_searching_no1g.svg": "/static/media/undraw_searching_no1g.a618418da1c6056f62e6b9a5f8749677.svg",
-    "static/media/undraw_certification_i2m0.svg": "/static/media/undraw_certification_i2m0.00a261f55d305c83b3a68654274f7a6b.svg",
+    "static/media/undraw_team-spirit_18vw.svg": "/static/media/undraw_team-spirit_18vw.b9a73d8561848464c870a346ba308647.svg",
+    "static/media/package.svg": "/static/media/package.cdb33b7f80abd797ecc4e5cce63b5167.svg",
+    "static/media/undraw_take-out-boxes_n094.svg": "/static/media/undraw_take-out-boxes_n094.517da3b5925db4bcbf4296f51b3ef70a.svg",
+    "static/media/undraw_searching_no1g.svg": "/static/media/undraw_searching_no1g.63e1736d1b5c33e2248bd9ef87d82676.svg",
+    "static/media/undraw_certification_i2m0.svg": "/static/media/undraw_certification_i2m0.4497ed0f5c5db48e9167778e37875374.svg",
     "static/media/Layer-login.svg": "/static/media/Layer-login.dc17952ff5cc2752f61c3dc126d78da5.svg",
-    "static/media/undraw_pay-with-credit-card_77g6.svg": "/static/media/undraw_pay-with-credit-card_77g6.79a7814a366d32817d03b7eb83f00c1b.svg",
-    "static/media/undraw_talking-on-the-phone_lc9v.svg": "/static/media/undraw_talking-on-the-phone_lc9v.c9fe89ad0d8b2ab60f335576e340a190.svg",
-    "static/media/undraw_no-data_ig65.svg": "/static/media/undraw_no-data_ig65.5a82724c05b1abb12db1068a16f4bbcd.svg",
+    "static/media/undraw_pay-with-credit-card_77g6.svg": "/static/media/undraw_pay-with-credit-card_77g6.d801cdc6dc66d38d94ddcc6d9ba92276.svg",
+    "static/media/undraw_talking-on-the-phone_lc9v.svg": "/static/media/undraw_talking-on-the-phone_lc9v.58c08dbe7b570a06ac8d2cde0022d4e5.svg",
+    "static/media/undraw_no-data_ig65.svg": "/static/media/undraw_no-data_ig65.6ff58ac6318d28a1765dc2ab63b83654.svg",
     "static/media/Edit.svg": "/static/media/Edit.d59159c2ad4018d3ec2c9cd327fb0a26.svg",
     "index.html": "/index.html",
-    "main.9679f86d.css.map": "/static/css/main.9679f86d.css.map",
-    "main.6c78d000.js.map": "/static/js/main.6c78d000.js.map",
+    "main.72e78015.css.map": "/static/css/main.72e78015.css.map",
+    "main.1673ccc8.js.map": "/static/js/main.1673ccc8.js.map",
     "879.f92100b4.chunk.js.map": "/static/js/879.f92100b4.chunk.js.map",
     "453.0735721a.chunk.js.map": "/static/js/453.0735721a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9679f86d.css",
-    "static/js/main.6c78d000.js"
+    "static/css/main.72e78015.css",
+    "static/js/main.1673ccc8.js"
   ]
 }

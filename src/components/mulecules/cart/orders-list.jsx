@@ -52,7 +52,7 @@ function OrdersList() {
                 </div>
 
                 <div className='flex gap-2 items-center cursor-pointer' onClick={() => navigate('/profile')}>
-                    <Text className={`text-red-500`}>ویرایش</Text>
+                    <Text className={`text-BgCustom`}>ویرایش</Text>
                     <img src={Edit} alt="" />
                 </div>
             </div>

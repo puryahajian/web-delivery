@@ -8,8 +8,8 @@ module.exports = {
       colors: {
         BorderCustom: "#356554",
         BgCustom: "#356554",
-        ColorButtom: "#ff881a",
-        BgTimer: "#fdede7",
+        ColorButtom: "#356554",
+        BgTimer: "#deede8",
         BgFooter: "#454545",
         BorderGray: "#BCBCBC",
         Gray1: "#f7f7f7",

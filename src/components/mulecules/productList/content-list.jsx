@@ -27,7 +27,7 @@ function ContentList({ search }) {
         toast.success('به سبد خرید اضافه شد');
     }
     return (
-        <div className='mt-4 grid border grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2  gap-[18px] '>
+        <div className='mt-4 grid grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2  gap-[18px] '>
             {filtered?.map((item) => (
                 <CardShopProduct
                     // width="200px"
@@ -40,8 +40,8 @@ function ContentList({ search }) {
                     imageCard={item?.image}
                     boxFitCard="contain"
                     product={item?.om_name}
-                    price={`${Number(item?.price).toLocaleString('fa-IR')} ریال`}
-                    priceOffer={`${Number(item?.discounted_price).toLocaleString('fa-IR')} ریال`}
+                    price={`${Number(item?.price).toLocaleString('fa-IR')}`}
+                    priceOffer={`${Number(item?.discounted_price).toLocaleString('fa-IR')}`}
                     style={{ fontSize: 16, color: "#333" }}
                     stylePrice={{ fontWeight: "bold", color: "black" }}
                     styleOffer={{ fontSize: 14 }}
