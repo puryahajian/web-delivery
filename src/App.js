@@ -15,6 +15,7 @@ import ModalGeneral from './components/mulecules/modal-general';
 import Cookies from "js-cookie";
 import ActiveOrderMobile from './pages/active-order-mobile';
 import TempMenuBottomMobile from './components/template/temp-menu-bottom-mobile';
+import CategoryMobile from './pages/category-mobile';
 
 
 function App() {
@@ -65,6 +66,7 @@ function App() {
           <Route path='/active-order' element={<ActiveOrderMobile />} />
           <Route path='/search' element={<Search />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/category-mobile' element={<CategoryMobile />} />
         </Routes>
         <TempMenuBottomMobile />
 

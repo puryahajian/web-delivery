@@ -6,6 +6,7 @@ function TempMenuBottomMobile() {
     const location = useLocation();
     const isHome = location.pathname === '/';
     const isActiveOrder = location.pathname.startsWith('/active-order');
+    const isActiveCategory = location.pathname.startsWith('/category-mobile');
 
     return (
         <div className={`fixed bottom-0 right-0 w-full bg-white py-4 hidden max-[480px]:block 
@@ -18,7 +19,7 @@ function TempMenuBottomMobile() {
             ${location.pathname === '/content-us' && 'max-[480px]:hidden'}
             ${location.pathname === '/about-us' && 'max-[480px]:hidden'}
             `}>
-            <div className='flex justify-center gap-[100px]'>
+            <div className='grid grid-cols-3 px-2 gap-[16px]'>
                 <Link to="/" aria-current={isHome ? 'page' : undefined}>
                     <div className={`text-center ${isHome ? 'text-[#2b2b2b]' : 'text-gray-400'}`}>
                         <svg 
@@ -52,6 +53,26 @@ function TempMenuBottomMobile() {
                                 />
                         </svg>
                         <Text className={`mt-1 ${isActiveOrder ? ' !font-bold' : '!text-gray-400'}`}>سفارش‌ها</Text>
+                    </div>
+                </Link>
+
+                <Link to="/category-mobile" aria-current={isActiveCategory ? 'page' : undefined}>
+                    <div className={`text-center ${isActiveCategory ? 'text-[#2b2b2b]' : 'text-gray-400'}`}>
+                        <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width={25} 
+                            height={25}
+                            className='m-auto'
+                            viewBox="0 0 24 24">
+                                <path 
+                                    fillRule="evenodd" 
+                                    clipRule="evenodd"
+                                    d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2s10 4.477 10 10M8 13a1 1 0 1 0 0-2a1 1 0 0 0 0 2m4 0a1 1 0 1 0 0-2a1 1 0 0 0 0 2m4 0a1 1 0 1 0 0-2a1 1 0 0 0 0 2" 
+                                    fill={isActiveCategory ? '#2b2b2b' : '#9ca3af'}
+                                    >
+                                </path>
+                        </svg>
+                        <Text className={`mt-1 text-[12px] ${isActiveCategory ? ' !font-bold' : '!text-gray-400'}`}>فئات </Text>
                     </div>
                 </Link>
             </div>

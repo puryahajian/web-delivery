@@ -12,7 +12,6 @@ const DISCOUNT_CODES = {
 export const CartProvider = ({ children }) => {
     const { mutate } = usePostAddToCart();
 
-
     const [cart, setCart] = useState(() => {
         const saved = localStorage.getItem("cart");
         return saved ? JSON.parse(saved) : [];
@@ -91,25 +90,23 @@ export const CartProvider = ({ children }) => {
         return getTotal() * rate;
     };
 
+    const saved = localStorage.getItem("cart");
+
+    const saveds = JSON.parse(saved) || [];
+    const result = saveds.map(item => ({
+        product_id: item.data.id,
+        quantity: item.quantity,
+    }));
+
     useEffect(() => {
-        if (cart.length > 0) {
-            const lastItem = cart[cart.length - 1]; // آخرین آیتم
-            const lastId = lastItem?.data?.id;
-            const lastQuantity = lastItem?.quantity;
-          
-            console.log("آخرین id:", lastId);
-            console.log("آخرین quantity:", lastQuantity);
-          
-            mutate(
-              { id: lastId, quantity: lastQuantity }, // 👈 فرستادن id + quantity
-              {
-                onSuccess: (data) => console.log("Cart synced:", data),
-                onError: (err) => console.error("Failed to sync cart:", err),
-              }
-            );
-          }
+        mutate(
+            { result }, 
+            {
+            // onSuccess: (data) => console.log("Cart synced:", data),
+            // onError: (err) => console.error("Failed to sync cart:", err),
+            }
+        );
     }, [cart, mutate]);
-    console.log(cart)
 
     return (
         <CartContext.Provider

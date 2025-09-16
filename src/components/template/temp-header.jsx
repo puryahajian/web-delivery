@@ -119,6 +119,8 @@ function TempHeader({ setModalLogOut }) {
                             <Text>تماس با ما</Text>
                         ) : location.pathname.startsWith("/product-detail") ? (
                             <Text>محصول</Text>
+                        ) : location.pathname.startsWith("/category-mobile") ? (
+                            <Text>دسته بندی ها</Text>
                         ) : (
                             ''
                         )}

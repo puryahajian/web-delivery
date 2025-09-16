@@ -95,14 +95,13 @@ function OrdersList() {
             </div>
 
             <div className='grid gap-4'>
-                {/* {!access ? ( */}
                     <>
                     {cart.map((item, index) => (
                         <CardShopProductWallet2
                             onClick={() => navigate(`/product-detail/${item?.data?.data?.id ?? item?.data?.id}`)}
                             imageCard={item?.data?.data?.image ?? item?.data?.image}
-                            product={item?.data?.data?.name ?? item?.data?.om_name}
-                            price={`${item?.data?.data?.price ?? item?.data?.price.toLocaleString('fa-IR')}`}
+                            product={item?.data?.data?.name ?? item?.data?.name}
+                            price={`${item?.data?.discounted_price !== null ? item?.data?.discounted_price.toLocaleString('fa-IR') : item?.data?.price.toLocaleString('fa-IR')}`}
                             numberProduct={item?.quantity}
                             check={true}
                             avatarButtonConfigRemove={{ 
@@ -126,73 +125,29 @@ function OrdersList() {
                         />
                     ))}
                     </>
-                {/* // ) : ( */}
-                    <>
-                   {/* {dataGetCart?.results?.map((order) => (
-                        order?.items?.map((item) => (
-                            <CardShopProductWallet2
-                            key={item?.id}
-                            onClick={() => navigate(`/product-detail/${item?.product?.id}`)}
-                            imageCard={item?.product?.image}
-                            product={item?.product?.name}
-                            price={`${item?.product?.price?.toLocaleString('fa-IR')}`}
-                            numberProduct={item?.quantity}
-                            check={true}
-                            avatarButtonConfigRemove={{ 
-                                icon: item?.quantity === 1 ? (
-                                    <img
-                                        onClick={() => {
-                                        removeFromCart(item?.product?.id)
-                                        toast.success('محصول از سبد خرید حذف شد')
-                                        }}
-                                        src={Delete}
-                                        alt=""
-                                    />
-                                ) : (
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24">
-                                        <path fill="white" fillRule="evenodd" d="M5 12a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1" clipRule="evenodd"></path>
-                                    </svg>
-                                ), 
-                                onTap: () => {
-                                    updateQuantity(item?.product?.id, item?.quantity - 1);
-                                } 
-                            }}
-                            avatarButtonConfigAdd={{ 
-                                icon: <img src={Plus}/>, 
-                                onTap: () => {
-                                    handlePositive(item?.product?.id, item?.quantity + 1);
-                                }
-                            }}
-                            />
-                        ))
-                        ))} */}
-                    </>
-                {/* // )} */}
+                <div className='m-auto text-center mt-6'>
+                    {cart?.length === 0 ? (
+                        <>
+                            <img src={NotData} className='w-32 m-auto mb-6' alt="" srcset="" />
+                            <Text>سلة التسوق الخاصة بك فارغة</Text>
+                        </>
+                    ) : (
+                        ''
+                    )}
+                </div>
+               
             </div>
             <div className='m-auto text-center mt-6'>
-                {!access ? (
+        
+                {cart?.length === 0 ? (
                     <>
-                        {cart?.length === 0 ? (
-                            <>
-                                <img src={NotData} className='w-32 m-auto mb-6' alt="" srcset="" />
-                                <Text>سبد خرید شما خالی است</Text>
-                            </>
-                        ) : (
-                            ''
-                        )}
+                        <img src={NotData} className='w-32 m-auto mb-6' alt="" srcset="" />
+                        <Text>سبد خرید شما خالی است</Text>
                     </>
                 ) : (
-                    <>
-                        {dataGetCart?.count === 0 ? (
-                            <>
-                            <img src={NotData} className='w-32 m-auto mb-6' alt="" srcset="" />
-                            <Text>سبد خرید شما خالی است</Text>
-                            </>
-                        ) : (
-                            ''
-                        )}
-                    </>
+                    ''
                 )}
+              
             </div>
         </div>
         </>
