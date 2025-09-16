@@ -16,12 +16,7 @@ function usePostAddToCart() {
             // console.log(data)
             const response = await interceptor.post(
                 `order/mobile/v1/orders/create/`,
-                data,
-                {
-                    headers: {
-                        "Content-Type": "application/json",
-                    }
-                }
+                data
             );
             return response.data;
         },

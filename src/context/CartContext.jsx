@@ -107,7 +107,7 @@ export const CartProvider = ({ children }) => {
             }
         );
     }, [cart, mutate]);
-    console.log(cart)
+    // console.log(cart)
 
     return (
         <CartContext.Provider

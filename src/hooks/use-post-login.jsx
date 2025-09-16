@@ -10,8 +10,8 @@ function usePostLogin() {
 
     return useMutation({
         mutationFn: async ({ userName }) => {
-            console.log(userName)
-            const data = qs.stringify({
+            // console.log(userName)
+            const data = JSON.stringify({
                 phone: userName,
             });
 
@@ -20,7 +20,7 @@ function usePostLogin() {
             return res.data;
         },
         onSuccess: (data) => {
-            console.log(data)
+            // console.log(data)
         },
         onError: (err) => {
             // console.log(err.massage)

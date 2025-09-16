@@ -10,9 +10,9 @@ interceptor.interceptors.request.use(
     const accessToken = Cookies.get("access");
 
     // فقط وقتی نیاز داری Content-Type رو ست کن
-    if (!config.headers["Content-Type"]) {
+    // if (!config.headers["Content-Type"]) {
       config.headers["Content-Type"] = "application/json";
-    }
+    // }
 
     config.headers["Accept"] = "application/json";
 
