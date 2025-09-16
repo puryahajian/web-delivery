@@ -73,6 +73,7 @@ export function CardShopProduct({
   style,
   width,
   styleOffer,
+  minWidth = "180px" || minWidth,
   stylePrice,
   avatarButtonConfigCardShopProduct,
 }) {
@@ -89,7 +90,7 @@ export function CardShopProduct({
         alignItems: "center",
         cursor: onTapCard ? "pointer" : "default",
         width: width,
-        minWidth: "180px",
+        minWidth: minWidth,
         boxSizing: "border-box",
       }}
     >

@@ -119,6 +119,8 @@ function TempHeader({ setModalLogOut }) {
                             <Text>تماس با ما</Text>
                         ) : location.pathname.startsWith("/product-detail") ? (
                             <Text>محصول</Text>
+                        ) : location.pathname.startsWith("/category-mobile") ? (
+                            <Text>دسته بندی ها</Text>
                         ) : (
                             ''
                         )}
@@ -190,7 +192,6 @@ function TempHeader({ setModalLogOut }) {
                                             <img src={UserIcon} className={`w-10 h-10 rounded-lg border bg-Gray1 border-BgCustom `} alt="" srcset="" />
                                         }
                                         classText={`hidden`}
-                                        // text={`${dataProfile?.name === null ? 'غير معروف' : dataProfile?.name} ${dataProfile?.family === null ? '' : dataProfile?.family}`}
                                         buttonTop='وتعديل المعلومات'
                                         buttonbottom='خروج'
                                         onClickEdit={() => navigate('/profile')}
@@ -199,11 +200,12 @@ function TempHeader({ setModalLogOut }) {
                                 </div>
                                 <AvatarButtonHeader
                                     onClick={() => navigate('/profile')}
-                                    src={UserIcon}
-                                    className={`flex items-center bg-Gray1 rounded-lg gap-4 border border-BorderCustom font-bold cursor-pointer`}
+                                    className={`flex items-center bg-Gray1 p-2 rounded-lg gap-4 border border-BorderCustom font-bold cursor-pointer`}
                                     classText={`hidden`}
-                                    // text={`${dataProfile?.name === null ? 'غير معروف' : dataProfile?.name} ${dataProfile?.family === null ? '' : dataProfile?.family}`}
-                                />
+                                    classImg={`hidden`}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="#356554" fillOpacity={0} stroke="#356554" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path strokeDasharray={20} strokeDashoffset={20} d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"></animate></path><path strokeDasharray={36} strokeDashoffset={36} d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"></animate></path><animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"></animate></g></svg>
+                                </AvatarButtonHeader>
                             </div>
                         ) : (
                             <AvatarButtonHeader
@@ -306,7 +308,9 @@ function TempHeader({ setModalLogOut }) {
                         {accessToken ? (
                             <DropDownMenu
                                 buttonMenu={
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="#356554" fillOpacity={0} stroke="#356554" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path strokeDasharray={20} strokeDashoffset={20} d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"></animate></path><path strokeDasharray={36} strokeDashoffset={36} d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"></animate></path><animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"></animate></g></svg>
+                                    <div className='bg-Gray1 p-2 rounded-lg'>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="#356554" fillOpacity={0} stroke="#356554" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path strokeDasharray={20} strokeDashoffset={20} d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"></animate></path><path strokeDasharray={36} strokeDashoffset={36} d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"></animate></path><animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"></animate></g></svg>
+                                    </div>
                                 }
                                 text={`${dataProfile?.name === null ? 'نامشخص' : dataProfile?.name} ${dataProfile?.family === null ? '' : dataProfile?.family}`}
                                 buttonTop='ویرایش اطلاعات'

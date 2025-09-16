@@ -8,12 +8,17 @@ import { useNavigate } from 'react-router-dom'
 import '../../../App.css'
 import { useCart } from '../../../context/CartContext'
 import toast from 'react-hot-toast'
+import { clearStorage } from 'mapbox-gl'
+import usePostAddToCart from '../../../hooks/use-post-add-to-cart'
 
 function ContentDiscount() {
     const {data} = useGetWithDiscount();
+    const {mutate} = usePostAddToCart();
     // console.log(data)
     const { cart, addToCart } = useCart();
     // console.log(cart)
+    
+
     const navigate = useNavigate();
     const sliderRef = useRef(null);
     const handleCardClick = (id) => {
@@ -22,6 +27,7 @@ function ContentDiscount() {
     const handleClick = (item) => {
         addToCart(item)
         toast.success('به سبد خرید اضافه شد');
+       
     }
     
     const scrollSlider = (direction) => {
@@ -61,7 +67,7 @@ function ContentDiscount() {
                             price={`${item?.price?.toLocaleString('fa-IR')}`}
                             priceOffer={`${item?.discounted_price?.toLocaleString('fa-IR')}`}
                             style={{ fontSize: 16, color: "#333" }}
-                            stylePrice={{ fontWeight: "bold", color: "green" }}
+                            stylePrice={{ fontWeight: "bold", color: "black" }}
                             styleOffer={{ fontSize: 14, display: item?.discounted_price === 0 ? "none" : "block" }}
                             avatarButtonConfigCardShopProduct={{
                                 onTap: () => handleClick(item),

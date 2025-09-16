@@ -17,6 +17,7 @@ import TempMenuBottomMobile from './components/template/temp-menu-bottom-mobile'
 import ActiveOrderMobile from './pages/active-order-mobile';
 import Transactios from './pages/transaction';
 import ContentUsMobile from './pages/content-us-mobile';
+import CategoryMobile from './pages/category-mobile';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
           <Route path='/product-detail/:id' element={<ProductId />} />
           <Route path='/product-list/:id' element={<ProductList />} />
           <Route path='/cart' element={<Cart />} />
+          <Route path='/category-mobile' element={<CategoryMobile />} />
           <Route path='/profile' element={<Profile />} />
           <Route path='/about-us' element={<AboutUs />} />
           <Route path='/search' element={<Search />} />

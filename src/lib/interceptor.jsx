@@ -7,14 +7,19 @@ const interceptor = axios.create({
 
 interceptor.interceptors.request.use(
   (config) => {
-    config.headers['Content-Type'] = 'multipart/form-data';
-    const accessToken = Cookies.get('access');
-    config.headers['Content-Type'] = 'application/x-www-form-urlencoded';
-    config.headers['Accept'] = 'application/json';
-    if (accessToken) {
-      config.headers['Authorization'] = `Bearer ${accessToken}`;
+    const accessToken = Cookies.get("access");
+
+    // فقط وقتی نیاز داری Content-Type رو ست کن
+    if (!config.headers["Content-Type"]) {
+      config.headers["Content-Type"] = "application/json";
     }
-    
+
+    config.headers["Accept"] = "application/json";
+
+    if (accessToken) {
+      config.headers["Authorization"] = `Bearer ${accessToken}`;
+    }
+
     return config;
   },
   (error) => Promise.reject(error)

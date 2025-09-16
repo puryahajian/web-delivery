@@ -27,7 +27,7 @@ function MulProductList() {
                             </TempBoxWhite>
                         </div>
                         <div className='col-span-3 max-[480px]:col-span-1'>
-                            <TempBoxWhite className={`!mt-0`}>
+                            <TempBoxWhite className={`!mt-0 max-[480px]:p-5`}>
                                 <ContentProductList search={search}/>
                             </TempBoxWhite>
                         </div>

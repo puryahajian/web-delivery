@@ -14,15 +14,16 @@ import Cookies from "js-cookie";
 import Edit from '../../../assets/image/Iconly/Bold/Edit.svg'
 import Location from '../../../assets/image/Iconly/Bold/Location.png'
 import useGetProfile from '../../../hooks/use-get-profile';
+import useGetOrders from '../../../hooks/use-get-orders'
 
 
 function OrdersList() {
     const {data} = useGetProfile();
     const { cart, updateQuantity, removeFromCart } = useCart();
+    
     const navigate = useNavigate();
     const access = Cookies.get('access');
 
-//    console.log(cart)
     return (
         <>
         <div className={`hidden ${!access ? 'max-[480px]:flex justify-between items-center mb-4' : 'hidden'}`}>
@@ -73,15 +74,15 @@ function OrdersList() {
                 {cart.map((item, index) => (
                     <CardShopProductWallet2
                         onClick={() => navigate(`/product-detail/${item?.data?.data?.id ?? item?.data?.id}`)}
-                        imageCard={item?.data?.data?.image ?? item?.data?.image}
-                        product={item?.data?.data?.name ?? item?.data?.om_name}
-                        price={`${item?.data?.data?.price ?? item?.data?.price.toLocaleString('fa-IR')}`}
+                        imageCard={item?.data?.image}
+                        product={item?.data?.name}
+                        price={`${item?.data?.discounted_price !== null ? item?.data?.discounted_price.toLocaleString('fa-IR') : item?.data?.price.toLocaleString('fa-IR')}`}
                         numberProduct={item?.quantity}
                         check={true}
                         avatarButtonConfigRemove={{ 
                             icon: item?.quantity === 1 ? (
                                 <img onClick={() => {
-                                    removeFromCart(item?.data?.data?.id ?? item?.data?.id)
+                                    removeFromCart(item?.data?.id)
                                     toast.success('محصول از سبد خرید حذف شد')
                                 }} src={Delete} alt="" />
                             ) : (

@@ -17,7 +17,7 @@ function MulTransaction() {
                             <Text>1234456</Text>
                         </div>
                         <div className="flex justify-between items-center">
-                            <Text>السعر</Text>
+                            <Text>میلغ      </Text>
 
                             <div className="flex items-center gap-1">
                                 <Text>۲۰۰۰۰</Text>

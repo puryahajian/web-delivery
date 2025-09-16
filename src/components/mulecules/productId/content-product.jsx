@@ -18,7 +18,7 @@ import Cookies from "js-cookie";
 
 function ContentProduct() {
     const {data} = useGetDetailProduct();
-    // console.log(data)
+    console.log(data)
     const { cart, addToCart, updateQuantity, removeFromCart } = useCart();
     const accessToken = Cookies.get('access');
 
@@ -41,7 +41,7 @@ function ContentProduct() {
                 <div className='flex gap-12'>
                     <img src={data?.data?.image} className='w-[424px] min-w-[424px] max-w-[424px] h-[464px] min-h-[464px] max-h-[464px] rounded-2xl object-cover' alt="" />
                     <div className='w-full'>
-                        <Text className={`font-bold text-lg`}>{data?.data?.om_name}</Text>
+                        <Text className={`font-bold text-lg`}>{data?.data?.name}</Text>
 
                         <Text className={`mt-4 h-[200px]`}>
                             {data?.data?.details}
@@ -141,7 +141,7 @@ function ContentProduct() {
 
                 <div className='flex items-center gap-2 py-6'>
                     <div className='border-2 border-BorderCustom bg-BorderCustom w-6 h-2 rounded-lg'/>
-                    <Text className={`font-bold`}>{data?.data?.om_name}</Text>
+                    <Text className={`font-bold`}>{data?.data?.name}</Text>
                 </div>
 
                 <div className='hidden max-[480px]:flex'>

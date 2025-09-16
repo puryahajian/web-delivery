@@ -27,19 +27,20 @@ function ContentList({ search }) {
         toast.success('به سبد خرید اضافه شد');
     }
     return (
-        <div className='mt-4 grid grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2  gap-[18px] '>
+        <div className='mt-4 grid grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2 gap-[18px] '>
             {filtered?.map((item) => (
                 <CardShopProduct
                     // width="200px"
                     onTapCard={() => handleCardClick(item?.id)}
                     paddingCard="10px"
+                    minWidth='w-full'
                     borderCard="2px solid #E6E6E6"
                     borderRadiusCard={8}
                     colorCard="white"
                     borderRadiusImg="8px"
                     imageCard={item?.image}
                     boxFitCard="contain"
-                    product={item?.om_name}
+                    product={item?.name}
                     price={`${Number(item?.price).toLocaleString('fa-IR')}`}
                     priceOffer={`${Number(item?.discounted_price).toLocaleString('fa-IR')}`}
                     style={{ fontSize: 16, color: "#333" }}

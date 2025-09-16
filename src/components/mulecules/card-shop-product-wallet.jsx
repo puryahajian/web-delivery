@@ -95,7 +95,7 @@ export const CardShopProductWallet = ({
         style={{
           flex: 1,
           overflow: "hidden",
-          borderRadius: "16px",
+          borderRadius: "8px",
           height: 86,
           minWidth: 86,
         }}
