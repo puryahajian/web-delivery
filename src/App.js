@@ -16,6 +16,8 @@ import Cookies from "js-cookie";
 import ActiveOrderMobile from './pages/active-order-mobile';
 import TempMenuBottomMobile from './components/template/temp-menu-bottom-mobile';
 import CategoryMobile from './pages/category-mobile';
+import { OrderProvider } from './context/OrderContext';
+import Transactios from './pages/transaction';
 
 
 function App() {
@@ -55,6 +57,7 @@ function App() {
   }
   return (
     <div className="App">
+      <OrderProvider>
       <CartProvider>
         <Routes>
           <Route path='/' element={<Home setModalLogOut={setModalLogOut} />} />
@@ -67,6 +70,8 @@ function App() {
           <Route path='/search' element={<Search />} />
           <Route path='/login' element={<Login />} />
           <Route path='/category-mobile' element={<CategoryMobile />} />
+          <Route path='/transaction' element={<Transactios />} />
+
         </Routes>
         <TempMenuBottomMobile />
 
@@ -84,6 +89,7 @@ function App() {
 
         <ScrollToTop />
       </CartProvider>
+      </OrderProvider>
 
     </div>
   );

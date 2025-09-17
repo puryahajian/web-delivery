@@ -125,16 +125,6 @@ function OrdersList() {
                         />
                     ))}
                     </>
-                <div className='m-auto text-center mt-6'>
-                    {cart?.length === 0 ? (
-                        <>
-                            <img src={NotData} className='w-32 m-auto mb-6' alt="" srcset="" />
-                            <Text>سلة التسوق الخاصة بك فارغة</Text>
-                        </>
-                    ) : (
-                        ''
-                    )}
-                </div>
                
             </div>
             <div className='m-auto text-center mt-6'>

@@ -1,26 +1,22 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import interceptor from '../lib/interceptor';
 import qs from "qs";
+import { useOrder } from '../context/OrderContext';
 
 function usePostAddToCart() {
     const queryClient = useQueryClient();
+    const { setOrderData } = useOrder();
+
 
     return useMutation({
-        mutationFn: async ({ id, quantity }) => {
-            console.log(id, quantity)
-            const data = {
-                delivery_method : 5525,
-                payment_method: 2319,
-                items: [
-                    {
-                        product_id: id,
-                        quantity: quantity
-                    }
-                ],
-                delivery_address: "0",
-                discount_code: ""
-            };
-            console.log(data)
+        mutationFn: async ({ result, discountCode }) => {
+            // console.log(result)
+            const data = JSON.stringify({
+                delivery_method : 1,
+                payment_method: 1,
+                items: result,
+                discount_code: discountCode
+            });
             
             const response = await interceptor.post(
                 `order/mobile/v1/orders/create/`,
@@ -34,7 +30,8 @@ function usePostAddToCart() {
             return response.data;
         },
         onSuccess: (data) => {
-            console.log(data)
+            // console.log(data)
+            setOrderData(data);
             queryClient.removeQueries('getCart');
         },
         onError: (error) => {

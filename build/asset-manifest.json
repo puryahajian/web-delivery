@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.18650934.css",
-    "main.js": "/static/js/main.a94fbca5.js",
+    "main.css": "/static/css/main.cf62a79d.css",
+    "main.js": "/static/js/main.cab60950.js",
     "static/js/879.f92100b4.chunk.js": "/static/js/879.f92100b4.chunk.js",
     "static/js/453.0735721a.chunk.js": "/static/js/453.0735721a.chunk.js",
     "static/media/banner-1.png": "/static/media/banner-1.fc4d598c3a0f620a3e41.png",
@@ -17,15 +17,16 @@
     "static/media/undraw_pay-with-credit-card_77g6.svg": "/static/media/undraw_pay-with-credit-card_77g6.79a7814a366d32817d03b7eb83f00c1b.svg",
     "static/media/undraw_talking-on-the-phone_lc9v.svg": "/static/media/undraw_talking-on-the-phone_lc9v.c9fe89ad0d8b2ab60f335576e340a190.svg",
     "static/media/undraw_no-data_ig65.svg": "/static/media/undraw_no-data_ig65.5a82724c05b1abb12db1068a16f4bbcd.svg",
+    "static/media/Bag.svg": "/static/media/Bag.79857f7de968f723f5c0a3d75f82b202.svg",
     "static/media/Edit.svg": "/static/media/Edit.d59159c2ad4018d3ec2c9cd327fb0a26.svg",
     "index.html": "/index.html",
-    "main.18650934.css.map": "/static/css/main.18650934.css.map",
-    "main.a94fbca5.js.map": "/static/js/main.a94fbca5.js.map",
+    "main.cf62a79d.css.map": "/static/css/main.cf62a79d.css.map",
+    "main.cab60950.js.map": "/static/js/main.cab60950.js.map",
     "879.f92100b4.chunk.js.map": "/static/js/879.f92100b4.chunk.js.map",
     "453.0735721a.chunk.js.map": "/static/js/453.0735721a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.18650934.css",
-    "static/js/main.a94fbca5.js"
+    "static/css/main.cf62a79d.css",
+    "static/js/main.cab60950.js"
   ]
 }

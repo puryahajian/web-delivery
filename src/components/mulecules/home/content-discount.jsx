@@ -75,10 +75,10 @@ function ContentDiscount() {
                             boxFitCard="contain"
                             width='180px'
                             product={item?.name}
-                            price={`${item?.price?.toLocaleString('fa-IR')}`}
-                            priceOffer={`${item?.discounted_price?.toLocaleString('fa-IR')}`}
+                            price={`${item?.price?.toLocaleString('fa-IR')} تومان`}
+                            priceOffer={`${item?.discounted_price?.toLocaleString('fa-IR')} تومان`}
                             style={{ fontSize: 16, color: "#333" }}
-                            stylePrice={{ fontWeight: "bold", color: "green" }}
+                            stylePrice={{ fontWeight: "bold", color: "#2b2b2b" }}
                             styleOffer={{ fontSize: 14, display: item?.discounted_price === 0 ? "none" : "block" }}
                             avatarButtonConfigCardShopProduct={{
                                 onTap: () => {

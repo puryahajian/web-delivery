@@ -3,20 +3,20 @@ import Text from '../../atoms/text'
 
 import Input from '../../atoms/input'
 import Button from '../../atoms/button'
-import { useCart } from '../../../context/CartContext'
+import { CartProvider, useCart } from '../../../context/CartContext'
 import Cookies from "js-cookie";
 import toast from 'react-hot-toast'
-import useGetProfile from '../../../hooks/use-get-profile'
-import { useNavigate } from 'react-router-dom'
+import { useOrder } from '../../../context/OrderContext'
 
 function AddressLeft() {
     const { cart, applyDiscount, discountError } = useCart();
-    const {data} = useGetProfile();
+    const { orderData } = useOrder();
+    const priceWithoutDecimals = Math.round(parseFloat(orderData?.final_price));
+
     const [code, setCode] = useState('');
     const [discountAmount, setDiscountAmount] = useState(0);
     const tax = 0;
     const access = Cookies.get('access');
-    const navigate = useNavigate();
 
     const total = cart.reduce((sum, item) => {
         // بررسی داده‌ها: اول item.data.data بعد item.data
@@ -76,7 +76,7 @@ function AddressLeft() {
             {/* فاکتور قیمت‌ها */}
             <div className='flex justify-between items-center mt-6'>
                 <Text>جمع قیمت: </Text>
-                <Text className={`flex gap-2 items-center`}>{total.toLocaleString('fa-IR')} تومان</Text>
+                <Text className={`flex gap-2 items-center`}>{!access ? total.toLocaleString('fa-IR') : priceWithoutDecimals.toLocaleString('fa-IR')} تومان</Text>
             </div>
 
             <div className='flex justify-between items-center mt-3'>
@@ -95,7 +95,7 @@ function AddressLeft() {
 
             <div className='flex justify-between items-center mt-3 font-bold text-lg'>
                 <Text>قیمت نهایی: </Text>
-                <Text className={`flex gap-2 items-center`}>{finalTotal.toLocaleString('fa-IR')} تومان</Text>
+                <Text className={`flex gap-2 items-center`}>{!access ? finalTotal.toLocaleString('fa-IR') : priceWithoutDecimals.toLocaleString('fa-IR')} تومان</Text>
             </div>
 
             <div className=' max-[480px]:fixed max-[480px]:bottom-0 max-[480px]:right-0 w-full max-[480px]:p-4 mt-8'>

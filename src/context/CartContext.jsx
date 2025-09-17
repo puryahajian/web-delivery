@@ -11,6 +11,8 @@ const DISCOUNT_CODES = {
 
 export const CartProvider = ({ children }) => {
     const { mutate } = usePostAddToCart();
+    const [orderData, setOrderData] = useState('');
+    const [discountCode, setDiscountCode] = useState(null);
 
     const [cart, setCart] = useState(() => {
         const saved = localStorage.getItem("cart");
@@ -86,8 +88,7 @@ export const CartProvider = ({ children }) => {
     };
 
     const applyDiscount = (code) => {
-        const rate = DISCOUNT_CODES[code] || 0;
-        return getTotal() * rate;
+        setDiscountCode(code);
     };
 
     const saved = localStorage.getItem("cart");
@@ -100,19 +101,21 @@ export const CartProvider = ({ children }) => {
 
     useEffect(() => {
         mutate(
-            { result }, 
+            { result, discountCode }, 
             {
             // onSuccess: (data) => console.log("Cart synced:", data),
             // onError: (err) => console.error("Failed to sync cart:", err),
             }
         );
-    }, [cart, mutate]);
+    }, [cart, mutate, discountCode]);
 
     return (
         <CartContext.Provider
-        value={{ cart, addToCart, updateQuantity, removeFromCart, applyDiscount, getTotal, getFinalTotal }}
+        value={{ cart, addToCart, updateQuantity, removeFromCart, applyDiscount, getTotal, getFinalTotal, orderData, setOrderData }}
         >
         {children}
         </CartContext.Provider>
     );
 };
+
+
