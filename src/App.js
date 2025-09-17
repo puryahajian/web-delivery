@@ -18,6 +18,7 @@ import ActiveOrderMobile from './pages/active-order-mobile';
 import Transactios from './pages/transaction';
 import ContentUsMobile from './pages/content-us-mobile';
 import CategoryMobile from './pages/category-mobile';
+import { OrderProvider } from './context/OrderContext';
 
 
 function App() {
@@ -64,6 +65,7 @@ function App() {
   }
   return (
     <div className="App">
+      <OrderProvider>
       <CartProvider>
         <Routes>
           <Route path='/' element={<Home setModalLogOut={setModalLogOut} />} />
@@ -95,6 +97,7 @@ function App() {
 
         <ScrollToTop />
       </CartProvider>
+      </OrderProvider>
 
     </div>
   );

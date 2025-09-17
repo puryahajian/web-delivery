@@ -1,9 +1,11 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import interceptor from '../lib/interceptor';
 import qs from "qs";
+import { useOrder } from '../context/OrderContext';
 
 function usePostAddToCart() {
     const queryClient = useQueryClient();
+    const { setOrderData } = useOrder();
 
     return useMutation({
         mutationFn: async ({ result }) => {
@@ -22,6 +24,7 @@ function usePostAddToCart() {
         },
         onSuccess: (data) => {
             // console.log(data)
+            setOrderData(data);
             queryClient.removeQueries('getCart');
         },
         onError: (error) => {
