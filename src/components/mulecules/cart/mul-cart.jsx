@@ -10,7 +10,7 @@ function MulCart() {
         <div>
             <TempBoxMain>
                 <TempHeader/>
-                <TempBoxWhite className={`max-[480px]:px-0 max-[480px]:mt-12`}>
+                <TempBoxWhite className={`max-[480px]:px-0 max-[480px]:mt-12 max-[480px]:mb-20`}>
                     <ContentCart/>
                 </TempBoxWhite>
                 <TempFooter/>

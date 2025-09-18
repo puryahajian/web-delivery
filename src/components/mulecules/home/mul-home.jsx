@@ -58,7 +58,7 @@ function MulHome({setModalLogOut}) {
                 {/* <StoryCarousel/> */}
             </TempBoxMain>
 
-            <div className='max-[480px]:p-2 max-[480px]:mx-4 max-[480px]:border max-[480px]:border-Gray1 max-[480px]:rounded-lg max-[480px]:mt-[16px]'>
+            <div className='max-[480px]:p-2 max-[480px]:mx-4 max-[480px]:border max-[480px]:border-[#ccc] max-[480px]:rounded-lg max-[480px]:mt-[16px]'>
                 <AvatarButton
                     // onTap={handleClick}
                     // width="100%"

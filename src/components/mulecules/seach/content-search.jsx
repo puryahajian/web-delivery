@@ -20,7 +20,7 @@ function ContentSearch({ setSearch }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-        //   handleGetValue();
+          handleGetValue();
         }}
       >
         <div className="flex items-center relative w-full m-auto gap-3 border-b border-gray-400">
@@ -33,7 +33,7 @@ function ContentSearch({ setSearch }) {
               viewBox="0 0 16 16"
             >
               <path
-                fill="#f15923"
+                fill="#356554"
                 d="m11.271 11.978l3.872 3.873a.5.5 0 0 0 .708 0a.5.5 0 0 0 0-.708l-3.565-3.564c2.38-2.747 2.267-6.923-.342-9.532c-2.73-2.73-7.17-2.73-9.898 0s-2.728 7.17 0 9.9a6.96 6.96 0 0 0 4.949 2.05a.5.5 0 0 0 0-1a5.96 5.96 0 0 1-4.242-1.757a6.01 6.01 0 0 1 0-8.486a6.004 6.004 0 0 1 8.484 0a6.01 6.01 0 0 1 0 8.486a.5.5 0 0 0 .034.738"
               ></path>
             </svg>
@@ -41,12 +41,12 @@ function ContentSearch({ setSearch }) {
           <Input
             value={search}
             onChange={(e) => {
-                setSearchInput(e.target.value)
-                setSearch(search);
+              setSearchInput(e.target.value)
+              setSearch(e.target.value);
             }}
             placeholder="جستجوی محصول"
             classIcon={`hidden`}
-            className={`pr-2 w-full bg-transparent border-none placeholder:text-gray-400`}
+            className={`pr-2 w-full bg-transparent border-none placeholder:text-gray-400 `}
           />
         </div>
       </form>

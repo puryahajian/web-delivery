@@ -9,12 +9,12 @@ function usePatchProfile() {
     return useMutation({
         mutationFn: async ({ phone, address, name, addressLat, addressLng, family , location }) => {
 
-            const data = qs.stringify({
+            const data = JSON.stringify({
                 phone: phone,
                 address: address,
                 name: name,
-                latitude: location?.features[0]?.bbox[2],
-                longitude: location?.features[0]?.bbox[3],
+                latitude: location?.bbox[2],
+                longitude: location?.bbox[3],
                 family: family
             });
             
