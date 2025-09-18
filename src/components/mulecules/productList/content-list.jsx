@@ -6,6 +6,7 @@ import useGetSubCategory from '../../../hooks/use-get-sub-category';
 import { useNavigate } from 'react-router-dom';
 import toast from 'react-hot-toast';
 import { useCart } from '../../../context/CartContext';
+import Text from '../../atoms/text';
 
 function ContentList({ search }) {
     const {data} = useGetSubCategory();
@@ -16,6 +17,7 @@ function ContentList({ search }) {
         item?.name?.toLowerCase().includes(search?.toLowerCase())
     );
 
+    console.log(filtered)
     const navigate = useNavigate();
 
     const handleCardClick = (id) => {
@@ -27,36 +29,42 @@ function ContentList({ search }) {
         toast.success('به سبد خرید اضافه شد');
     }
     return (
-        <div className='mt-4 grid grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2  gap-[18px] '>
-            {filtered?.map((item) => (
-                <CardShopProduct
-                    // width="200px"
-                    onTapCard={() => handleCardClick(item?.id)}
-                    paddingCard="10px"
-                    borderCard="2px solid #E6E6E6"
-                    borderRadiusCard={8}
-                    colorCard="white"
-                    borderRadiusImg="8px"
-                    imageCard={item?.image}
-                    boxFitCard="contain"
-                    product={item?.name}
-                    price={`${item?.price} ريال`}
-                    priceOffer={`${item?.discounted_price} ريال`}
-                    style={{ fontSize: 16, color: "#333" }}
-                    stylePrice={{ fontWeight: "bold", color: "black" }}
-                    styleOffer={{ fontSize: 14 }}
-                    avatarButtonConfigCardShopProduct={{
-                        onTap: () => handleGetData(item),
-                        width: 40,
-                        height: 40,
-                        border: "1px solid transparent",
-                        borderRadius: "16px",
-                        icon: <img src={IconCardShopProduct} alt="" srcset="" />,
-                        // colorIcon: "black",
-                        sizeIcon: 20,
-                    }}
-                />
-            ))}
+        <div>
+            <div className='mt-4 grid grid-cols-4 max-[1200px]:grid-cols-3 max-[860px]:grid-cols-2  gap-[18px] '>
+                {filtered?.map((item) => (
+                    <CardShopProduct
+                        // width="200px"
+                        onTapCard={() => handleCardClick(item?.id)}
+                        paddingCard="10px"
+                        borderCard="2px solid #E6E6E6"
+                        borderRadiusCard={8}
+                        colorCard="white"
+                        borderRadiusImg="8px"
+                        imageCard={item?.image}
+                        boxFitCard="contain"
+                        product={item?.name}
+                        price={`${item?.price} ريال`}
+                        priceOffer={`${item?.discounted_price} ريال`}
+                        style={{ fontSize: 16, color: "#333" }}
+                        stylePrice={{ fontWeight: "bold", color: "black" }}
+                        styleOffer={{ fontSize: 14 }}
+                        avatarButtonConfigCardShopProduct={{
+                            onTap: () => handleGetData(item),
+                            width: 40,
+                            height: 40,
+                            border: "1px solid transparent",
+                            borderRadius: "16px",
+                            icon: <img src={IconCardShopProduct} alt="" srcset="" />,
+                            // colorIcon: "black",
+                            sizeIcon: 20,
+                        }}
+                    />
+                ))}
+            </div>
+
+            <div className='flex justify-center items-center max-[480px]:mt-20'>
+                <Text>{filtered?.length === 0 && 'محصول موجود نیست'}</Text>
+            </div>
         </div>
     )
 }
