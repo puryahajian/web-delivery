@@ -217,7 +217,7 @@ function TempHeader({ setModalLogOut }) {
                             />
                         )}
 
-                        <Link to='/cart' className="relative indexAvatarButtonHeader">
+                        <Link to='/cart' className="relative">
                             <AvatarButtonHeader
                                 src={BagWhite}
                                 className="flex items-center w-max rounded-[8px] font-bold !bg-Gray1"

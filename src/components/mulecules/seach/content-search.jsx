@@ -6,6 +6,12 @@ import Input from '../../atoms/input';
 function ContentSearch({ setSearch }) {
   const [search, setSearchInput] = useState('');
 
+  const handleGetValue = () => {
+    if (search.trim()) {
+      setSearch(search); // مقدار سرچ رو بفرسته بالا
+    }
+  };
+
   return (
     <div className="text-center items-center justify-center">
       {/* <Text className="text-4xl mb-3 font-bold">بحث</Text>
@@ -14,7 +20,7 @@ function ContentSearch({ setSearch }) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-        //   handleGetValue();
+          handleGetValue();
         }}
       >
         <div className="flex items-center relative w-full m-auto gap-3 border-b border-gray-400">
@@ -36,7 +42,7 @@ function ContentSearch({ setSearch }) {
             value={search}
             onChange={(e) => {
                 setSearchInput(e.target.value)
-                setSearch(search);
+                setSearch(e.target.value);
             }}
             placeholder="جستجوی محصول"
             classIcon={`hidden`}

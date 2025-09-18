@@ -96,7 +96,7 @@ export function CardShopProductWallet2({
               overflow: "hidden",
               textOverflow: "ellipsis",
             }}
-            className="font-bold font-sans text-sm"
+            className="font-bold font-sans text-sm max-[480px]:truncate max-[480px]:w-[130px]"
           >
             {product}
           </span>
