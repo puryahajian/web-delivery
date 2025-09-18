@@ -11,7 +11,7 @@ function ItemCategory({ subCategories, mainCategoriesOrder }) {
         if (subCategories && subCategories.length > 0) return subCategories
         return mainCategoriesOrder || []
     }, [subCategories, mainCategoriesOrder])
-    // console.log(categoriesToShow)
+    console.log(categoriesToShow)
 
     const handleClick = (id) => {
         navigate(`/product-list/${id}`)

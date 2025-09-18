@@ -142,7 +142,7 @@ function TempHeader({ setModalLogOut }) {
                                     onClick={() => setShowSearch(true)}
                                     type="text"
                                     placeholder="جستجو در محصولات..."
-                                    className={`w-full rounded-lg border border-gray-300 bg-white py-[9px] pl-10 pr-4 text-sm outline-none`}
+                                    className={`w-full rounded-lg border border-gray-300 bg-white py-[9px] pl-10 pr-4 text-[16px] placeholder:text-[16px] outline-none`}
                                 />
                                 
                                 {/* آیکون سرچ */}

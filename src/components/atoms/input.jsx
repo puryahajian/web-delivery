@@ -18,7 +18,8 @@ function Input({className, placeholder, classIcon, value, onChange, inputMode, d
             </span>
             <input
                 type="text"
-                className={`${className} w-full h-12 border border-BorderGray placeholder:text-sm placeholder:text-BorderGray bg-Gray1 rounded-lg pr-14 outline-none max-[480px]:text-base max-[480px]:placeholder:text-base`}
+                autoComplete="off"
+                className={`${className} w-full h-12 border border-BorderGray placeholder:text-[16px] placeholder:text-BorderGray bg-Gray1 rounded-lg pr-14 outline-none max-[480px]:text-base text-[16px]`}
                 placeholder={placeholder}
                 value={value}
                 inputMode={inputMode}
