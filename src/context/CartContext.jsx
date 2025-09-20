@@ -1,5 +1,6 @@
 import React, { useState, createContext, useContext, useEffect } from 'react';
 import usePostAddToCart from '../hooks/use-post-add-to-cart';
+import Cookies from "js-cookie";
 
 const CartContext = createContext(null);
 export const useCart = () => useContext(CartContext);
@@ -13,6 +14,8 @@ export const CartProvider = ({ children }) => {
     const { mutate } = usePostAddToCart();
     const [orderData, setOrderData] = useState('');
     const [discountCode, setDiscountCode] = useState(null);
+    const access = Cookies.get('access');
+
 
     const [cart, setCart] = useState(() => {
         const saved = localStorage.getItem("cart");
@@ -100,6 +103,7 @@ export const CartProvider = ({ children }) => {
     }));
 
     useEffect(() => {
+        if (!access) return;
         mutate(
             { result, discountCode }, 
             {
