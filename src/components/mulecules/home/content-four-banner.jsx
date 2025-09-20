@@ -16,7 +16,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.sonatikaran.ir${lastFourBanners?.[0]?.image}`}
+                image={`https://api.nowdesign.ir${lastFourBanners?.[0]?.image}`}
                 boxFit="cover"
             />
             <AvatarButton
@@ -27,10 +27,10 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.sonatikaran.ir${lastFourBanners?.[1]?.image}`}
+                image={`https://api.nowdesign.ir${lastFourBanners?.[1]?.image}`}
                 boxFit="cover"
             />
-                <AvatarButton
+            <AvatarButton
                 // onTap={handleClick}
                 width="100%"
                 className={`w-full`}
@@ -38,9 +38,10 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.sonatikaran.ir${lastFourBanners?.[2]?.image}`}
+                image={`https://api.nowdesign.ir${lastFourBanners?.[2]?.image}`}
                 boxFit="cover"
-            /> <AvatarButton
+            /> 
+            <AvatarButton
                 // onTap={handleClick}
                 width="100%"
                 className={`w-full`}
@@ -48,7 +49,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.sonatikaran.ir${lastFourBanners?.[3]?.image}`}
+                image={`https://api.nowdesign.ir${lastFourBanners?.[3]?.image}`}
                 boxFit="cover"
             />
         </div>

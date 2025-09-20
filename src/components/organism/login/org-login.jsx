@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../atoms/button';
 import Loading from '../../atoms/loading';
-import ImgLogin from '../../../assets/image/Layer-login.svg'
+import ImgLogin from '../../../assets/image/undraw_two-factor-authentication_8tds.svg'
 import usePostLogin from '../../../hooks/use-post-login';
 import usePostVerify from '../../../hooks/use-post-verify';
 import { useNavigate } from 'react-router-dom';

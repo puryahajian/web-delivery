@@ -9,11 +9,15 @@ import ItemCardActiveOrderMobile from "./item-card-active-order-mobile";
 import Img from '../../../assets/image/item-discount.png'
 import moment from "moment-jalaali";
 import Rial from "../../../assets/image/Iconly/Iconly/Bold/Frame.png"
-
+import Cookies from "js-cookie";
+import Button from "../../atoms/button";
+import { useNavigate } from "react-router-dom";
 
 function ActiveOrderMobile () {
     const [modalDetailOrder, setModalDetailOrder] = useState(false);
     const [getData , setGetData] = useState();
+    const access = Cookies.get('access')
+    const navigate = useNavigate();
     // console.log(getData)
 
     const stateLabels = {
@@ -58,6 +62,18 @@ function ActiveOrderMobile () {
                     setModalDetailOrder={setModalDetailOrder}
                     setGetData={setGetData}
                 />
+                
+                {!access && (
+                    <div className="flex items-center justify-between">
+                        <Text>برای مشاهده سفارشات وارد شوید</Text>
+
+                        <Button
+                        onClick={() => navigate('/login')}
+                        className={`bg-transparent !text-BgCustom`}>
+                            لاگین
+                        </Button>
+                    </div>
+                )}
             </div>
 
             {/* modal view order */}

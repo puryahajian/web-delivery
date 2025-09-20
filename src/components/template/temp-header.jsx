@@ -154,7 +154,7 @@ function TempHeader({ setModalLogOut }) {
                                     viewBox="0 0 16 16"
                                     >
                                     <path
-                                        fill="#356554"
+                                        fill="#ca4f4f"
                                         d="m11.271 11.978l3.872 3.873a.5.5 0 0 0 .708 0a.5.5 0 0 0 0-.708l-3.565-3.564c2.38-2.747 2.267-6.923-.342-9.532c-2.73-2.73-7.17-2.73-9.898 0s-2.728 7.17 0 9.9a6.96 6.96 0 0 0 4.949 2.05a.5.5 0 0 0 0-1a5.96 5.96 0 0 1-4.242-1.757a6.01 6.01 0 0 1 0-8.486a6.004 6.004 0 0 1 8.484 0a6.01 6.01 0 0 1 0 8.486a.5.5 0 0 0 .034.738"
                                     ></path>
                                 </svg>
@@ -204,7 +204,7 @@ function TempHeader({ setModalLogOut }) {
                                     classText={`hidden`}
                                     classImg={`hidden`}
                                 >
-                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="#356554" fillOpacity={0} stroke="#356554" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path strokeDasharray={20} strokeDashoffset={20} d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"></animate></path><path strokeDasharray={36} strokeDashoffset={36} d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"></animate></path><animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"></animate></g></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24"><g fill="#ca4f4f" fillOpacity={0} stroke="#ca4f4f" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path strokeDasharray={20} strokeDashoffset={20} d="M12 5c1.66 0 3 1.34 3 3c0 1.66 -1.34 3 -3 3c-1.66 0 -3 -1.34 -3 -3c0 -1.66 1.34 -3 3 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="20;0"></animate></path><path strokeDasharray={36} strokeDashoffset={36} d="M12 14c4 0 7 2 7 3v2h-14v-2c0 -1 3 -3 7 -3Z"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.5s" dur="0.5s" values="36;0"></animate></path><animate fill="freeze" attributeName="fill-opacity" begin="1.1s" dur="0.5s" values="0;1"></animate></g></svg>
                                 </AvatarButtonHeader>
                             </div>
                         ) : (
@@ -272,17 +272,17 @@ function TempHeader({ setModalLogOut }) {
                                         height={24} 
                                         viewBox="0 0 24 24">
                                             <path 
-                                                fill="#356554" 
+                                                fill="#ca4f4f" 
                                                 d="M6.53 3.47a.75.75 0 0 1 0 1.06l-2.5 2.5a.75.75 0 0 1-1.06-1.06l2.5-2.5a.75.75 0 0 1 1.06 0">
                                                     </path>
                                                     <path 
-                                                    fill="#356554" 
+                                                    fill="#ca4f4f" 
                                                     fillRule="evenodd" 
                                                     d="M12 4.5a8.5 8.5 0 1 0 0 17a8.5 8.5 0 0 0 0-17m.75 3.5a.75.75 0 0 0-1.5 0v5a.75.75 0 0 0 .352.636l3 1.875a.75.75 0 1 0 .796-1.272l-2.648-1.655z" 
                                                     clipRule="evenodd">
                                                         </path>
                                                         <path 
-                                                        fill="#356554" 
+                                                        fill="#ca4f4f" 
                                                         d="M17.47 4.53a.75.75 0 0 1 1.06-1.06l2.5 2.5a.75.75 0 0 1-1.06 1.06z">
                                             </path>
                                     </svg>
@@ -296,10 +296,20 @@ function TempHeader({ setModalLogOut }) {
 
                         <Link to='/cart' className="relative">
                             <AvatarButtonHeader
-                                src={Bag}
-                                className="flex items-center w-max rounded-[8px] font-bold !bg-Gray1"
-                                classImg="p-[10px] border-transparent"
-                            />
+                                // src={Bag}
+                                className="flex items-center w-max rounded-[8px] font-bold !bg-Gray1 p-2"
+                                classImg="p-[10px] border-transparent hidden"
+                                classText={`hidden`}
+                            >
+                                <svg 
+                                    width="24" 
+                                    height="24" 
+                                    fill="none" 
+                                    xmlns="http://www.w3.org/2000/svg">
+                                        <path 
+                                        fill-rule="evenodd"
+                                         clip-rule="evenodd" d="M16.93 7a.502.502 0 00.044-.226H17A4.992 4.992 0 0012.005 2 4.992 4.992 0 007.01 6.774a.649.649 0 000 .226h-.078c-1.282 0-2.652.846-3.05 3.12l-.777 6.195C2.469 20.863 4.81 22 7.869 22h8.29c3.049 0 5.32-1.646 4.754-5.685l-.769-6.195C19.676 7.91 18.35 7 17.087 7h-.157zm-1.437 0a.648.648 0 01-.043-.226 3.478 3.478 0 00-3.484-3.472 3.478 3.478 0 00-3.484 3.472.649.649 0 010 .226h7.011zm-6.396 5.149a.897.897 0 01-.884-.91c0-.502.396-.91.884-.91s.884.408.884.91-.396.91-.884.91zm4.905-.91c0 .502.396.91.884.91a.897.897 0 00.884-.91.897.897 0 00-.884-.91.897.897 0 00-.884.91z" fill="#ca4f4f"/></svg>
+                            </AvatarButtonHeader>
                             <span className={`absolute -top-1 flex justify-center items-center -right-1 bg-red-500 text-white text-xs font-bold w-5 h-5 rounded-full transition-all ease-in-out ${cart?.length === 0 ? 'hidden' : ''}`}>
                                 {cart?.length}
                             </span>
