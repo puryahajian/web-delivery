@@ -16,7 +16,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.bahateam.ir${lastFourBanners?.[0]?.image}`}
+                image={`https://api.baybiar.ir${lastFourBanners?.[0]?.image}`}
                 boxFit="cover"
             />
             <AvatarButton
@@ -27,7 +27,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.bahateam.ir${lastFourBanners?.[1]?.image}`}
+                image={`https://api.baybiar.ir${lastFourBanners?.[1]?.image}`}
                 boxFit="cover"
             />
             <AvatarButton
@@ -38,7 +38,7 @@ function ContentFourBanner() {
                 borderRadius="8px"
                 borderRadiusImage="4px"
                 check={true}
-                image={`https://api.bahateam.ir${lastFourBanners?.[2]?.image}`}
+                image={`https://api.baybiar.ir${lastFourBanners?.[2]?.image}`}
                 boxFit="cover"
             /> 
             <AvatarButton

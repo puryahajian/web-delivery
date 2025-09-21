@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const interceptor = axios.create({
-  baseURL: "https://api.bahateam.ir/",  
+  baseURL: "https://api.baybiar.ir/",  
 });
 
 interceptor.interceptors.request.use(
@@ -38,7 +38,7 @@ interceptor.interceptors.response.use(
 
       if (refreshToken) {
         try {
-          const { data } = await axios.post('https://api.bahateam.ir/account/api/v1/refresh/', { refresh: refreshToken });
+          const { data } = await axios.post('https://api.baybiar.ir/account/api/v1/refresh/', { refresh: refreshToken });
           const newAccessToken = data.access;
           Cookies.set('access', newAccessToken, { expires: 365, path: '/' });
           originalRequest.headers['Authorization'] = `Bearer ${newAccessToken}`;
