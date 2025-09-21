@@ -33,7 +33,7 @@ function TempMenuBottomMobile() {
                                     fill={isHome ? '#356554' : '#9ca3af'}
                                 />
                         </svg>
-                        <Text className={`mt-1 ${isHome ? ' !font-bold' : '!text-gray-400'}`}>خانه</Text>
+                        <Text className={`mt-1 ${isHome ? '' : '!text-gray-400'}`}>خانه</Text>
                     </div>
                 </Link>
 
@@ -52,7 +52,7 @@ function TempMenuBottomMobile() {
                                     fill={isActiveOrder ? '#356554' : '#9ca3af'}
                                 />
                         </svg>
-                        <Text className={`mt-1 ${isActiveOrder ? ' !font-bold' : '!text-gray-400'}`}>سفارش‌ها</Text>
+                        <Text className={`mt-1 ${isActiveOrder ? '' : '!text-gray-400'}`}>سفارش‌ها</Text>
                     </div>
                 </Link>
 
@@ -72,7 +72,7 @@ function TempMenuBottomMobile() {
                                     >
                                 </path>
                         </svg>
-                        <Text className={`mt-1 ${isActiveCategory ? ' !font-bold' : '!text-gray-400'}`}>دسته بندی </Text>
+                        <Text className={`mt-1 ${isActiveCategory ? '' : '!text-gray-400'}`}>دسته بندی </Text>
                     </div>
                 </Link>
             </div>

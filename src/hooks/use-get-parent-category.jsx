@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import interceptor from '../lib/interceptor';
 
 const useGetParentCategory = (selectedParentId) => {
-    console.log(selectedParentId)
+    // console.log(selectedParentId)
     const { data, error, isLoading } = useQuery({
         queryKey: ['parentCategories', selectedParentId],
         queryFn: () => 

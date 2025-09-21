@@ -27,10 +27,6 @@ export default function StoryCarousel() {
     const handleStoryClick = (index) => {
         const newStories = [...stories];
         newStories[index].seen = true;
-
-        const [seenStory] = newStories.splice(index, 1);
-        newStories.push(seenStory);
-
         setStories(newStories);
         setLightboxIndex(index);
         setProgress(0);
@@ -81,7 +77,7 @@ export default function StoryCarousel() {
     }, [lightboxIndex]);
 
     return (
-        <div className="relative max-[480px]:mx-[5px] flex mt-4 items-center">
+        <div className="relative max-[480px]:mx-[5px] flex mt-28 items-center">
             {/* دکمه چپ */}
             <button
                 onClick={() => scroll("left")}
@@ -102,7 +98,7 @@ export default function StoryCarousel() {
                     className={`w-[72px] h-[72px] flex-shrink-0 rounded-full p-1 cursor-pointer transition-all duration-300 ${
                     story.seen
                         ? "border-4 border-gray-400"
-                        : "border-4 border-orange-400"
+                        : "border-4 border-BorderCustom"
                     }`}
                 >
                     <img

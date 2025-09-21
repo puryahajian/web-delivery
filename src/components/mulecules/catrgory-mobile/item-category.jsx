@@ -8,10 +8,8 @@ function ItemCategory({ subCategories, mainCategoriesOrder }) {
 
     // لیست نهایی دسته‌بندی‌ها (اگر subCategories بود همونو نشون بده، وگرنه دسته اصلی‌ها)
     const categoriesToShow = useMemo(() => {
-        if (subCategories && subCategories.length > 0) return subCategories
-        return mainCategoriesOrder || []
+        return subCategories && subCategories.length > 0 ? subCategories : mainCategoriesOrder
     }, [subCategories, mainCategoriesOrder])
-    console.log(categoriesToShow)
 
     const handleClick = (id) => {
         navigate(`/product-list/${id}`)

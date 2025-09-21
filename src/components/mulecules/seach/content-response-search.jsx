@@ -18,7 +18,7 @@ function ContentResponseSearch({
                 <div>
                     <Text>{name}</Text>
                     <hr className='pb-1 mt-1'/>
-                    <Text className={`flex items-center gap-2`}>{price} <img src={Rial} alt="" srcset="" /></Text>
+                    <Text className={`flex items-center gap-2`}>{price} تومان</Text>
                 </div>
             </div>
             <div className='flex justify-end items-center'>

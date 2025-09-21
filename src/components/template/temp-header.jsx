@@ -138,12 +138,14 @@ function TempHeader({ setModalLogOut }) {
                         <div className={`w-full ${location.pathname === '/' ? 'max-[480px]:fixed max-[480px]:top-[68px] max-[480px]:right-[0px] max-[480px]:px-4' : 'max-[480px]:hidden'}`}>
                             <div className="relative w-full">
                                 {/* Input جستجو */}
-                                <input
+                                <div
                                     onClick={() => setShowSearch(true)}
-                                    type="text"
+                                    // type="text"
                                     placeholder="جستجو در محصولات..."
-                                    className={`w-full rounded-lg border border-gray-300 bg-white py-[9px] pl-10 pr-4 text-[16px] placeholder:text-[16px] outline-none`}
-                                />
+                                    className='w-full rounded-lg border border-gray-300 bg-white py-[9px] pl-10 pr-4 text-[16px] placeholder:text-[16px] outline-none'
+                                >
+                                    <Text className={`text-gray-400`}>جستجو در محصولات...</Text>
+                                </div>
                                 
                                 {/* آیکون سرچ */}
                                 <svg

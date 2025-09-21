@@ -44,9 +44,9 @@ function ContentSearch({ setSearch }) {
               setSearchInput(e.target.value)
               setSearch(e.target.value);
             }}
-            placeholder="جستجوی محصول"
+            placeholder="جستجو در محصولات..."
             classIcon={`hidden`}
-            className={`pr-2 w-full bg-transparent border-none placeholder:text-gray-400 `}
+            className={`pr-2 w-full text-base bg-transparent border-none placeholder:text-gray-400 `}
           />
         </div>
       </form>

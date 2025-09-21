@@ -22,7 +22,9 @@ function MulHome({setModalLogOut}) {
         <div className='max-[480px]:mb-24'>
             <TempHeader setModalLogOut={setModalLogOut} />   
 
-            <TempBoxMain className={`mt-[98px] max-[480px]:mt-[117px]`}>
+            <TempBoxMain className={`mt-[98px] max-[480px]:mt-[130px]`}>
+                <StoryCarousel/>
+                
                 {/* time shop */}
                     {data?.results[0]?.open_time === null ? (
                         ''
@@ -55,7 +57,6 @@ function MulHome({setModalLogOut}) {
                         </div>
                     )}
                 {/* story */}
-                {/* <StoryCarousel/> */}
             </TempBoxMain>
 
             <div className='max-[480px]:p-2 max-[480px]:mx-4 max-[480px]:border max-[480px]:border-[#ccc] max-[480px]:rounded-lg max-[480px]:mt-[16px]'>
